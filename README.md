@@ -12,7 +12,7 @@ To run the script:
 - Create a .env file with your OpenAI API key
 - Then create and activate a conda environment:
 ```
-conda create -n pureml_consolidation_agent python=3.10
+conda create -n pureml_consolidation_agent python=3.12
 conda activate pureml_consolidation_agent
 ```
 - Install the requirements:
