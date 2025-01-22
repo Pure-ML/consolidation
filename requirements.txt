@@ -1,10 +1,10 @@
 pandas>=1.5.0
-numpy>=1.21.0
 langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.10
 langchain-openai>=0.0.2
-langgraph>=0.0.10
-thefuzz>=0.19.0
-python-Levenshtein>=0.21.0  # Optional, makes thefuzz faster
-openai>=1.0.0  # Required for ChatOpenAI
+chromadb>=0.4.0  # For vector storage
+openai>=1.0.0
 python-dotenv>=1.0.0  # For loading environment variables
-tiktoken>=0.5.0  # For token counting 
+tiktoken>=0.5.0  # For token counting
+tqdm>=4.66.0 

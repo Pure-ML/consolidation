@@ -232,28 +232,28 @@ class ConsolidationAgent:
             
             prompt = f"""Analyze these values and identify groups of equivalent entries that represent the same entity but with different formatting, spelling, or naming conventions.
 
-Values:
-{sorted(batch)}
+            Values:
+            {sorted(batch)}
 
-Return the groups in JSON format:
-{{
-    "groups": [
-        {{
-            "values": ["value1", "value2", "value3"],
-            "explanation": "Brief reason why these are the same",
-            "confidence": "HIGH/MEDIUM/LOW"
-        }},
-        ...
-    ]
-}}
+            Return the groups in JSON format:
+            {{
+                "groups": [
+                    {{
+                        "values": ["value1", "value2", "value3"],
+                        "explanation": "Brief reason why these are the same",
+                        "confidence": "HIGH/MEDIUM/LOW"
+                    }},
+                    ...
+                ]
+            }}
 
-Guidelines:
-- Group entries that clearly represent the same entity
-- Consider variations in spelling, formatting, and common abbreviations
-- Include typos and minor formatting differences
-- For product names, group different versions/formats if they're clearly the same base product
-- Provide clear explanations for why values are grouped
-- Indicate confidence level for each grouping"""
+            Guidelines:
+            - Group entries that clearly represent the same entity
+            - Consider variations in spelling, formatting, and common abbreviations
+            - Include typos and minor formatting differences
+            - For product names, group different versions/formats if they're clearly the same base product
+            - Provide clear explanations for why values are grouped
+            - Indicate confidence level for each grouping"""
             
             try:
                 response = await self.client.chat.completions.create(
