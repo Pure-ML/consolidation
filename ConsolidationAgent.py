@@ -65,8 +65,9 @@ class TextUtils:
 
 class BatchProcessor:
     """Handles batching of values for efficient LLM processing."""
-    MAX_TOKENS_PER_BATCH = 4000  # Conservative limit for context window
-    
+    # MAX_TOKENS_PER_BATCH = 4000  # Conservative limit for context window
+    MAX_TOKENS_PER_BATCH = 1000  # Conservative limit for context window
+
     @staticmethod
     def create_batches(values: Set[str]) -> List[Set[str]]:
         """Split values into batches based on token count."""
@@ -224,7 +225,10 @@ class ConsolidationAgent:
         
         # Split values into batches
         batches = BatchProcessor.create_batches(values)
+
         total_batches = len(batches)
+        # print the total number of batches
+        print(f"Total batches: {total_batches}")
         
         for i, batch in enumerate(batches, 1):
             if total_batches > 1:

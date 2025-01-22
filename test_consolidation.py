@@ -2,6 +2,8 @@ import pandas as pd
 from ConsolidationAgent import ConsolidationAgent, SimilarityConfig, TextPattern
 import asyncio
 from typing import Dict, List, Set
+from readable_mapping_script import reorganize_mapping
+import json
 
 async def process_column(df: pd.DataFrame, column: str, agent: ConsolidationAgent) -> Dict[str, str]:
     """Process a single column and return the value mappings."""
@@ -125,7 +127,14 @@ async def process_column(df: pd.DataFrame, column: str, agent: ConsolidationAgen
 
 async def main():
     # Load the dataset
-    df = pd.read_csv("/Users/skrachur/Desktop/pureml/modified_inconsistent_dataset.csv")
+
+    # # modified cars dataset 
+    # df = pd.read_csv("modified_inconsistent_dataset.csv")
+
+
+    # job-catergorisation datatset FIRST 5000 ROWS
+    df = pd.read_csv("job-categorisation.csv").head(300)
+    
     
     # Initialize the agent
     agent = ConsolidationAgent()
@@ -145,6 +154,14 @@ async def main():
             if 0 <= col_idx < len(df.columns):
                 column = df.columns[col_idx]
                 mappings = await process_column(processed_df, column, agent)
+
+                # print the mappings
+                print(f"Mappings for column {column}:")
+                organized_mapping = reorganize_mapping(mappings)
+                print(organized_mapping)
+                # save reorganized mapping dictionary to a json file
+                with open("reorganized_mapping.json", "w") as f:
+                    json.dump(organized_mapping, f)
                 
                 # Apply mappings to the dataframe
                 if mappings:
