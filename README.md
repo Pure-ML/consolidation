@@ -25,3 +25,5 @@ python test_rag_agent.py
 ```
 - In test_rag_agent.py, you can test different datasets by changing the path to the dataset in the script. 
 
+Some Thoughts:
+- Current implementation might be a bit computationally expensive for bigger datasets where there's many many unique values. Should explore some sort of optimization technique whether it be batching or parallelization in LangGraph, etc. 
