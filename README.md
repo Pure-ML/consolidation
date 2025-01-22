@@ -30,3 +30,4 @@ Some Thoughts:
 - Accuracy will likely improve if we inject some context about the dataset into the prompt as well. These can easily be extracted from user's initial inputs in the PureML UI. Specifically the LLM should have some context on what the column represents/role it plays in the dataset (e.g. in a dataset about cars, the brand column refers to the brand of the car)
 - Prompt + LLM should also be configurable by user.
 - Will add a feature where we suggest a canonical value based on the value that appears the most in the dataset in that particular mapping.
+- Needs to be thoroughly tested.
