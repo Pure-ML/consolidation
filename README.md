@@ -81,4 +81,7 @@ The script will:
    - Track LLM input/output tokens
    - Calculate total API costs
 
+My Notes: 
+- Embeddings aren't really being used at all for the similarity calculation. In testing, I've noticed that cosine similarity b/w embeddings isn't as great of a measure as Jaro Winkler Distance for our use cases so far. I find this kind of weird, and I'm thinking at some point in the future we can try doing a hybrid similarity score and average/do a weighted calculation for similarity using cosine similarity, Jaro Winkler, and maybe even other string similarity algorithms. The embeddings generation can be taken out of the code if we decide to move forward with just Jaro Winkler in MVP. This will speed things up by a bit.
+- If we decide to use embeddings later on, choosing the right Vector DB would be really helpful for our use case. DBs like Pinecone, Qdrant, etc. come with lots of neat functionality that we can use to find/cluster embeddings that are similar. 
 
