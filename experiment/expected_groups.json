@@ -1,0 +1,13 @@
+{
+    "brand": [
+        ["Chevy", "Che./vy", "VChevrolet", "Chevrolet"],
+        ["Ford", "F./ord", "Fo.rd"],
+        ["Toyota", "Toy./ota", "Toyo/ta"],
+        ["Nissan", "Nis./san", "Nis/san"],
+        ["BMW", "B.M.W", "B M W"],
+        ["Mercedes-Benz", "Mercedes", "MB"],
+        ["Volkswagen", "VW", "V.W."],
+        ["Hyundai", "Hy.undai", "Hyun.dai"],
+        ["Kia", "Ki.a", "K.i.a"]
+    ]
+} 

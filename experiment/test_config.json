@@ -1,0 +1,16 @@
+{
+    "output_directory": "test_results",
+    "test_cases": [
+        {
+            "csv_file": "modified_inconsistent_dataset.csv",
+            "columns": ["brand"],
+            "expected_groups": "expected_groups.json",
+            "description": "Car brands test case"
+        },
+        {
+            "csv_file": "inconsistent_makeup_products.csv",
+            "columns": ["brand", "product_name"],
+            "description": "Makeup products test case"
+        }
+    ]
+} 
