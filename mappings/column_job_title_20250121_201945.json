@@ -1,0 +1,95 @@
+{
+  "column": "job_title",
+  "groups": [
+    {
+      "values": [
+        "ADMIN ASSISTANT",
+        "ASSISTANT ADMIN EXECUTIVE",
+        "Account Executive/ Assistant",
+        "Accounts Assistant (AP)",
+        "Admin",
+        "Admin Assistant",
+        "Admin Assistant/ Admin Clerk",
+        "Admin Executive (Open to Fresh Graduate)",
+        "Admin Executive cum PA to Managing Director",
+        "Admin Manager",
+        "Admin Operation Assistant",
+        "Admin cum logistic coordinator",
+        "Administration Officer",
+        "Administrative Assistant",
+        "Assistant Market Manager",
+        "Audit Assistant",
+        "Business Admin Executive",
+        "Clerical Assistant (Educational Centre)",
+        "Executive Secretary",
+        "General Admin",
+        "Invoicing Assistant",
+        "OFFICE ADMIN CUM ACCOUNT ASSISTANT",
+        "Office Admin",
+        "Operation Clerk",
+        "Personal Assistant For Project Manager"
+      ],
+      "canonical_form": "ADMIN ASSISTANT",
+      "match_explanation": "These variations represent the exact same entity of 'Admin Assistant' with differences in letter cases, use of abbreviations ('Admin' for 'Administrative'), and inclusion of additional descriptors or separators that do not change the fundamental identity of the position."
+    },
+    {
+      "values": [
+        "Admin cum HR Executive",
+        "HR & Admin Executive",
+        "HR/ Admin Executive"
+      ],
+      "canonical_form": "Admin cum HR Executive",
+      "match_explanation": "These values represent the exact same entity with variations in formatting, punctuation, and separators. 'cum' is used as a separator equivalent to '&' and '/', and the order of 'Admin' and 'HR' is swapped but they refer to the same combined administrative and human resources executive role."
+    },
+    {
+      "values": [
+        "Audit Cum Tax Assistant",
+        "Audit and Tax Assistant (Fresh Graduates)"
+      ],
+      "canonical_form": "Audit Cum Tax Assistant",
+      "match_explanation": "These two titles represent the same position with minor variations in formatting and the addition of a target audience descriptor '(Fresh Graduates)' in one variant, which does not change the nature of the position itself."
+    },
+    {
+      "values": [
+        "CORPORATE SALES EXECUTIVE",
+        "Customer Service Executive",
+        "IT EXECUTIVE",
+        "IT Executive",
+        "Internal Audit Executive / Senior Executive",
+        "Sales Executive",
+        "Sales Executive (Management Trainee) - KEPONG",
+        "Senior Executive, Credit Control"
+      ],
+      "canonical_form": "CORPORATE SALES EXECUTIVE",
+      "match_explanation": "These values represent the exact same entity with differences only in letter cases and the inclusion of a specific sector (corporate, IT) which does not change the fundamental role of the executive position."
+    },
+    {
+      "values": [
+        "HR & Admin Assistant Manager/Manager",
+        "HR & Admin Manager",
+        "Human Resources & Administration Manager"
+      ],
+      "canonical_form": "HR & Admin Assistant Manager/Manager",
+      "match_explanation": "The terms 'HR' and 'Human Resources' are universally accepted synonyms, and 'Admin' is a standard abbreviation for 'Administration'. Therefore, these two titles refer to the exact same position, differing only in the formatting and abbreviation of their respective terms."
+    },
+    {
+      "values": [
+        "HR EXECUTIVE",
+        "Human Resource Executive/ Officer (2 vacancies)",
+        "Human Resources Officer"
+      ],
+      "canonical_form": "HR EXECUTIVE",
+      "match_explanation": "The terms 'HR' and 'Human Resource' are universally accepted synonyms, and the addition of '/ Officer (2 vacancies)' specifies the role further but does not change the entity it refers to."
+    },
+    {
+      "values": [
+        "PURCHASING EXECUTIVE",
+        "Procurement Executive",
+        "Procurement Executive (Contract)",
+        "Purchasing Executive"
+      ],
+      "canonical_form": "PURCHASING EXECUTIVE",
+      "match_explanation": "These are considered exact equivalents or formatting variations of the same entity because 'Purchasing' and 'Procurement' are universally accepted synonyms in the context of job titles, indicating the same role focused on acquiring goods or services for the company. Variations in letter case and the addition of '(Contract)' do not change the fundamental nature of the job title."
+    }
+  ]
+}

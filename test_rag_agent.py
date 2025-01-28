@@ -2,6 +2,9 @@ import pandas as pd
 import asyncio
 from NewRAGAgent import NewRAGAgent
 from dotenv import load_dotenv
+import os
+import json
+import datetime
 
 load_dotenv()
 
@@ -110,6 +113,31 @@ async def process_column(df: pd.DataFrame, column: str, agent: NewRAGAgent):
             
             else:
                 print("Invalid choice")
+    
+    # Save the mappings to a file for review
+    if groups:
+        mapping_info = {
+            'column': column,
+            'groups': [
+                {
+                    'values': sorted(list(group.values)),
+                    'canonical_form': group.canonical_form,
+                    'match_explanation': group.match_explanation
+                }
+                for group in groups
+            ]
+        }
+        
+        # Create mappings directory if it doesn't exist
+        os.makedirs('mappings', exist_ok=True)
+        
+        # Save with timestamp
+        timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f'mappings/column_{column}_{timestamp}.json'
+        
+        with open(filename, 'w') as f:
+            json.dump(mapping_info, f, indent=2)
+        print(f"\nSaved mapping details to {filename}")
     
     # Get and return the final mappings
     return agent.get_value_mappings()
