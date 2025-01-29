@@ -118,7 +118,5 @@ The algorithm produces:
 - This is a good starting point for the algorithm with regards to MVP. 
 
 
-My Notes: 
-- Embeddings aren't really being used at all for the similarity calculation. In my testing, I've noticed that cosine similarity b/w embeddings isn't as great of a measure as Jaro Winkler Distance for our use cases so far. Jaro Winkler is good at catching the bad formatting/mispellings and the cosine similarity calculation is a little better for synonyms. Couldn't really establish a clear pattern here, but I'm thinking in the future we could incorporate some sort of hybrid similarity calculation using embeddings and algorithms like Jaro Winkler (there's also other string similarity algorithms we can explore). For MVP, we can take out all the embeddings functionality (cost savings is super minimal, it'll just speed things up more). I left it in for now. 
-- If we decide to use embeddings later on, choosing the right Vector DB would be really helpful for our use case. DBs like Pinecone, Qdrant, etc. come with lots of neat functionality that we can use to find/cluster embeddings that are similar. We could abandon/rely less on string similarity algorithms if this avenue works. Could probably switch to some sort of purely vector searching method. 
+
 
