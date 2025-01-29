@@ -1,18 +1,17 @@
 # Consolidation Algorithm
 
-This package provides a robust, dataset-agnostic approach to consolidating similar values in datasets using semantic embeddings, string similarity metrics, and LLM verification.
+This package provides a robust, dataset-agnostic approach to consolidating similar values in datasets using string similarity metrics and LLM verification.
 
 ## Features
 
 - Dataset agnostic - works with any type of textual data
 - Parallel processing for improved performance
-- Semantic similarity using OpenAI embeddings
 - String similarity using Jaro-Winkler distance
 - LLM-based verification of groups
-- Automatic subgroup detection for rejected groups
-- Caching of embeddings for efficiency
-- Detailed cost tracking and logging
+- Smart subgroup detection with certainty-based grouping
+- Per-dataset cost tracking and detailed logging
 - Interactive graph visualization
+- Value limit protection (max 1,000 unique values per column)
 
 ## Installation
 
@@ -26,40 +25,56 @@ Make sure to set your OpenAI API key in your environment:
 export OPENAI_API_KEY='your-api-key-here'
 ```
 
-## Usage
-
-Simply run the script and follow the interactive prompts:
-
-```bash
-python IntelligentConsolidation.py
-```
-
-The script will:
-1. Ask for your CSV file path
-2. Show available columns and their unique value counts
-3. Let you select which column to analyze
-4. Process the column and find similar value groups
-5. Allow you to review each group and choose canonical forms
-6. Show cost summary
-7. Let you save the consolidated results to a new CSV
-
 ## Configuration Parameters
 
 - `similarity_threshold`: Threshold for Jaro-Winkler string similarity (default: 0.8)
 - `model`: The OpenAI model to use for verification (default: "gpt-4")
-- `embedding_model`: The OpenAI embedding model (default: "text-embedding-3-small")
 - `batch_size`: Number of concurrent LLM calls (default: 5)
+- `MAX_UNIQUE_VALUES`: Maximum number of unique values to process per column (default: 1,000)
+
+## Testing
+
+To test the consolidation algorithm with predefined datasets and configurations:
+
+```bash
+python test_bench.py
+```
+
+The test bench:
+1. Processes multiple test datasets in sequence
+2. Generates detailed results for each dataset including:
+   - Number of rows processed
+   - Number of unique values
+   - Groups identified
+   - Cost metrics
+3. Saves results in JSON format in the `results/` directory with format:
+   - `{dataset_name}_{num_rows}rows_{timestamp}.json`
+4. Allows for reproducible testing and performance comparison
+
+### Test Results Structure
+
+Each test result JSON includes:
+- Dataset information (name, total rows, sampling)
+- Column-specific results (groups found, similarity scores)
+- Cost metrics (input tokens, output tokens, total cost)
+- Processing timestamp
+
+This structured testing approach helps in:
+- Validating algorithm performance
+- Tracking costs across different datasets
+- Comparing results between algorithm versions
+- Identifying potential improvements
 
 ## Algorithm Steps
 
 1. Column Analysis
    - Generate concise column description using LLM
-   - Extract unique values
+   - Extract unique values (limited to first 1,000)
    - Build column context
 
 2. Parallel Processing
-   - Generate embeddings for unique values
    - Standardize values by removing special characters
+   - Process values in efficient batches
 
 3. Initial Grouping
    - Form initial groups from exact standardized matches
@@ -69,7 +84,8 @@ The script will:
 4. LLM Verification
    - Verify groups in parallel batches
    - Analyze rejected groups for valid subgroups
-   - Calculate embedding variance for visualization
+   - Only form subgroups with 100% certainty
+   - Place values in best-fit groups when overlaps occur
 
 5. Interactive Review
    - Visualize similarity graph
@@ -77,9 +93,30 @@ The script will:
    - Apply verified mappings to dataset
 
 6. Cost Tracking
-   - Monitor embedding token usage
-   - Track LLM input/output tokens
-   - Calculate total API costs
+   - Track LLM input/output tokens per dataset
+   - Calculate API costs per dataset
+   - Display cost summary after processing
+
+## Output
+
+The algorithm produces:
+1. Consolidated CSV file with mapped values
+2. Similarity graph visualization
+3. Detailed cost metrics per dataset
+4. Processing logs with group information
+
+## Notes
+
+- For columns with more than 1,000 unique values, only the first 1,000 values will be processed
+- The algorithm prioritizes certainty in grouping over completeness
+- Cost metrics are tracked separately for each dataset
+- Graph visualization can be saved with custom filenames
+
+## Sujan's Additional Notes
+- In testing, it's pretty clear that we need some more filtering of groups than just Jaro-Winkler similarity. If the LLM is analyzing really large groups, that's blows up the context window which makes things expensive or can cause the LLM to fail.
+- This filtering can be done with bolstering our similarity calculations with more sophisticated methods as I mentioned previously or even by switching over to a 3rd partyVector DB in the long-run. 
+- This is a good starting point for the algorithm with regards to MVP. 
+
 
 My Notes: 
 - Embeddings aren't really being used at all for the similarity calculation. In my testing, I've noticed that cosine similarity b/w embeddings isn't as great of a measure as Jaro Winkler Distance for our use cases so far. Jaro Winkler is good at catching the bad formatting/mispellings and the cosine similarity calculation is a little better for synonyms. Couldn't really establish a clear pattern here, but I'm thinking in the future we could incorporate some sort of hybrid similarity calculation using embeddings and algorithms like Jaro Winkler (there's also other string similarity algorithms we can explore). For MVP, we can take out all the embeddings functionality (cost savings is super minimal, it'll just speed things up more). I left it in for now. 

@@ -1,0 +1,137 @@
+{
+  "dataset": "job-categorisation.csv",
+  "total_rows": 39695,
+  "sampled_rows": null,
+  "timestamp": "2025-01-28T15:59:56.035260",
+  "column_results": [
+    {
+      "column": "job_title",
+      "total_rows": 1377,
+      "unique_values": 1000,
+      "sample_values": [
+        "AML/Risk control Data analyst",
+        "Partnership Manager",
+        "Relationship Manager, Enterprise Banking (SEREMBAN/NILAI)",
+        "Data Maintenance Operation - Mandarin Speaking",
+        "Assistant HR Manager (based in Malaysia)"
+      ],
+      "groups": [
+        {
+          "values": [
+            "AUTOMOTIVE TECHNICIAN",
+            "AUTOMOTIVE TECHNICIAN (MECHANIC)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.93125
+        },
+        {
+          "values": [
+            "AIR COND TECHNICIANS",
+            "AIRCOND TECHNICIAN",
+            "AIR CONDITION TECHNICIAN"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8991228070175438
+        },
+        {
+          "values": [
+            "3D Programmer (Networking Specialization)",
+            "3D Programmer (AR Core Specialization)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8977422034282262
+        },
+        {
+          "values": [
+            "(MCTF Application Only) Engineering Manager - CPQ & Revenue (Hybrid Working)",
+            "(MCTF Application Only) Lead Engineer (Hybrid Working)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8832808517019044
+        },
+        {
+          "values": [
+            "AVP, Securities & Derivatives Manager - Malaysia (Hybrid)",
+            "AVP, Securities and Derivatives Manager"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8655140970930445
+        },
+        {
+          "values": [
+            "AIA Life & Takaful Advisor (Full Time/Part Time + Earn up to RM15,000)",
+            "AIA LIFE/ TAKAFUL PLANNER (Extra Allowance + Earn up to RM15,000)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8207931199235547
+        },
+        {
+          "values": [
+            "(Remote) Customer Service Executive (Live Chat - Typing Only)",
+            "(Work from home) Customer Service Executive (Live Chat - Typing Only)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8081094698552362
+        },
+        {
+          "values": [
+            "3D Designer (Exhibitions & Events)",
+            "3D Event Designer",
+            "3D DESIGNER - EVENTS & EXHIBITIONS",
+            "3D DESIGNER (EVENT)",
+            "3D Event Exhibition Designer",
+            "3D Designer - Exhibition and Event"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.622711011783395
+        },
+        {
+          "values": [
+            "APEL COORDINATOR",
+            "APEL Coordinator"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.5833333333333334
+        },
+        {
+          "values": [
+            "AML/CFT Transaction Monitoring & Invest Ops",
+            "AML Transaction Monitoring Assistant Manager",
+            "AML/CFT TRANSACTION MONITORING&INVEST OPS"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.5758640001833423
+        },
+        {
+          "values": [
+            "3D Designer",
+            "3D DESIGNER"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.5757575757575758
+        },
+        {
+          "values": [
+            "3D Designer (Exhibitions and Events)",
+            "3D DESIGNER (EXHIBITION/EVENT) JUNIOR/SENIOR POSITION AVAILABLE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.4024771524771525
+        }
+      ]
+    }
+  ],
+  "dataset_info": {
+    "name": "job-categorisation.csv",
+    "total_rows": 39695,
+    "rows_processed": 39695,
+    "sampling_ratio": 100.0,
+    "processing_timestamp": "20250128_160052"
+  },
+  "cost_metrics": {
+    "chat_input_tokens": 13060,
+    "chat_output_tokens": 342,
+    "total_tokens": 13402,
+    "total_cost": 0.41231999999999996
+  }
+}

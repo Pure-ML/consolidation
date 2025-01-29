@@ -1,0 +1,62 @@
+{
+  "dataset": "health dirty.csv",
+  "total_rows": 57654,
+  "sampled_rows": null,
+  "timestamp": "2025-01-28T16:05:58.456423",
+  "column_results": [
+    {
+      "column": "Procedure/Condition",
+      "total_rows": 57654,
+      "unique_values": 34,
+      "sample_values": [
+        "AAA Repair Unruptured",
+        "AMI",
+        "Acute Stroke",
+        "Acute Stroke Hemorrhagic",
+        "Acute Stroke Ischemic"
+      ],
+      "groups": [
+        {
+          "values": [
+            "Heart F",
+            "Heart Failure"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9076923076923077
+        },
+        {
+          "values": [
+            "Acute Stroke Hemorrhagic",
+            "Acute Stroke Ischemic",
+            "Acute Stroke Subarachnoid",
+            "Acute Stroke"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8965256196045669
+        },
+        {
+          "values": [
+            "Hip ",
+            "Hip",
+            "Hip Fracture"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8777777777777778
+        }
+      ]
+    }
+  ],
+  "dataset_info": {
+    "name": "health dirty.csv",
+    "total_rows": 57654,
+    "rows_processed": 57654,
+    "sampling_ratio": 100.0,
+    "processing_timestamp": "20250128_160611"
+  },
+  "cost_metrics": {
+    "chat_input_tokens": 2509,
+    "chat_output_tokens": 111,
+    "total_tokens": 2620,
+    "total_cost": 0.08192999999999999
+  }
+}

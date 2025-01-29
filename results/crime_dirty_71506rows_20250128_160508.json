@@ -1,0 +1,625 @@
+{
+  "dataset": "crime_dirty.csv",
+  "total_rows": 71506,
+  "sampled_rows": null,
+  "timestamp": "2025-01-28T16:02:21.093575",
+  "column_results": [
+    {
+      "column": "UOR_DESC",
+      "total_rows": 71506,
+      "unique_values": 506,
+      "sample_values": [
+        "POSS CONT SUB-1ST DEGREE-1ST OFFENSE-HEROIN",
+        "BURGLARY - 2ND DEGREE",
+        "TBUT OR DISP FIREARM",
+        "DOMESTIC ABUSE DUTIES OF LAW ENFORCEMENT",
+        "TBUT OR DISP SHOPLIFTING $500 < $1,000"
+      ],
+      "groups": [
+        {
+          "values": [
+            "IN-CUSTODY DEATH - CORRECTIONS - NOT IN FACILITY",
+            "IN-CUSTODY DEATH - CORRECTIONS - IN FACILITY"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9651515151515152
+        },
+        {
+          "values": [
+            "TBUT OR DISP FROM SHIPMENT $1,000 < $10,000",
+            "TBUT OR DISP FROM SHIPMENT $10,000 < $1,000,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9643740722414645
+        },
+        {
+          "values": [
+            "UNLAWFUL ACCESS TO COMPUTER - 3RD DEGREE",
+            "UNLAWFUL ACCESS TO COMPUTER - 4TH DEGREE",
+            "UNLAWFUL ACCESS TO COMPUTER-1ST DEGREE",
+            "UNLAWFUL ACCESS TO COMPUTER - 2ND DEGREE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9579127247548299
+        },
+        {
+          "values": [
+            "TBUT OR DISP FARM EQUIP  $10,000 < $1,000,000",
+            "TBUT OR DISP FARM EQUIP $1,000 < $10,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9577777777777777
+        },
+        {
+          "values": [
+            "FAILURE TO COMPLY W/SEX OFFENDER REGISTRATION - 1ST OFF",
+            "FAILURE TO COMPLY W/SEX OFFENDER REGISTRATION-2ND > OFFENSE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9576697878392794
+        },
+        {
+          "values": [
+            "THEFT-RECEIPT OF STOLEN CREDIT/DEBIT CARD-1 CARD",
+            "THEFT-RECEIPT OF STOLEN CREDIT/DEBIT CARD-2 OR MORE CARDS"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9564902948861516
+        },
+        {
+          "values": [
+            "UNLAWFUL IMPRISONMENT-2ND DEGREE",
+            "UNLAWFUL IMPRISONMENT-1ST DEGREE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9556034482758621
+        },
+        {
+          "values": [
+            "CRIMINAL ABUSE-1ST DEGREE-CHILD 12 OR UNDER",
+            "CRIMINAL ABUSE 1ST DEGREE - CHILD 12 OR UNDER"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9534440753045403
+        },
+        {
+          "values": [
+            "POSS CONTROLLED SUB 1ST DEGREE 1ST OFF (METHAMPHETAMINE)",
+            "POSS CONTROLLED SUB 1ST DEGREE 2ND OFF (METHAMPHETAMINE)",
+            "POSS CONTROLLED SUB 1ST DEGREE 3RD > (METHAMPHETAMINE)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9501466898429533
+        },
+        {
+          "values": [
+            "TRAF IN MARIJUANA-8 OZ TO < 5 LBS-2ND OR > OFFENSE",
+            "TRAF IN MARIJUANA-8 OZ TO < 5 LBS-1ST OFFENSE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9499047619047619
+        },
+        {
+          "values": [
+            "TRAF IN MARIJUANA-LESS THAN 8 OZ-1ST OFFENSE",
+            "TRAF IN MARIJUANA-LESS THAN 8 OZ-2ND OR > OFFENSE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9488325263586588
+        },
+        {
+          "values": [
+            "UNAUTHORIZED USE OF MOTOR VEHICLE - 2ND OR > OFFENSE",
+            "UNAUTHORIZED USE OF MOTOR VEHICLE 1ST OFFENSE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9434432234432234
+        },
+        {
+          "values": [
+            "STRANGULATION 1ST DEGREE",
+            "STRANGULATION 2ND DEGREE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9404761904761905
+        },
+        {
+          "values": [
+            "RECKLESS DRIVING",
+            "CARELESS DRIVING"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9361111111111112
+        },
+        {
+          "values": [
+            "POSS CONT SUB-1ST DEGREE-2ND  OFFENSE-HEROIN",
+            "POSS CONT SUB-1ST DEGREE-3RD OR > OFFENSE-HEROIN",
+            "POSS CONT SUB-1ST DEGREE-1ST OFFENSE-HEROIN"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9360512097721401
+        },
+        {
+          "values": [
+            "TBUT OR DISP CONTENTS FROM VEH  $10,000,000 OR MORE",
+            "TBUT OR DISP CONTENTS FROM VEH $1,000 < $10,000",
+            "TBUT OR DISP CONTENTS FROM VEH $500 < $1,000",
+            "TBUT OR DISP CONTENTS FROM VEH",
+            "TBUT OR DISP CONTENTS FROM VEH $10,000 < $1,000,000",
+            "TBUT OR DISP CONTENTS FROM VEH $1,000,000 < $10,000,000",
+            "TBUT OR DISP CONTENTS FROM VEH < $500"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9360058719962442
+        },
+        {
+          "values": [
+            "TBUT OR DISP POCKETPICKING $1,000 < $10,000",
+            "TBUT OR DISP POCKETPICKING $500 < $1,000",
+            "TBUT OR DISP POCKETPICKING"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9356042536275094
+        },
+        {
+          "values": [
+            "TBUT OR DISP COIN MACHINE $1,000 < $10,000",
+            "TBUT OR DISP COIN MACHINE",
+            "TBUT OR DISP COIN MACHINE $500 < $1,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.934008097165992
+        },
+        {
+          "values": [
+            "USING RESTRICTED AMMO DURING A FELONY (PERSON KILLED)",
+            "USING RESTRICTED AMMO DURING A FELONY (SHOTS FIRED, NO INJUR",
+            "USING RESTRICTED AMMO DURING A FELONY (NO SHOTS)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9324360728927168
+        },
+        {
+          "values": [
+            "WANTON ENDANGERMENT-2ND DEGREE-POLICE OFFICER",
+            "WANTON ENDANGERMENT-1ST DEGREE",
+            "WANTON ENDANGERMENT-2ND DEGREE",
+            "WANTON ENDANGERMENT-1ST DEGREE-POLICE OFFICER"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9288359788359788
+        },
+        {
+          "values": [
+            "TBUT OR DISP GASOLINE",
+            "TBUT OR DISP GASOLINE $1,000 < $10,000",
+            "TBUT OR DISP GASOLINE $10,000 < $1,000,000",
+            "TBUT OR DISP GASOLINE $500 < $1,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9287984667551231
+        },
+        {
+          "values": [
+            "FLEEING OR EVADING POLICE - 2ND DEGREE (ON FOOT)",
+            "FLEEING OR EVADING POLICE 2ND DEGREE (MOTOR VEHICLE)",
+            "FLEEING OR EVADING POLICE - 1ST DEGREE (ON FOOT)",
+            "FLEEING OR EVADING POLICE - 1ST DEGREE (MOTOR VEHICLE)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9284595004776041
+        },
+        {
+          "values": [
+            "TBUT OR DISP ALL OTHERS $1,000 < $10,000",
+            "TBUT OR DISP ALL OTHERS $1,000,000 < $10,000,000",
+            "TBUT OR DISP ALL OTHERS $10,000 < $1,000,000",
+            "TBUT OR DISP ALL OTHERS",
+            "TBUT OR DISP ALL OTHERS $500 < $1,000",
+            "TBUT OR DISP ALL OTHERS $10,000,000 OR MORE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9283752841263102
+        },
+        {
+          "values": [
+            "TBUT OR DISP BICYCLES",
+            "TBUT OR DISP BICYCLES $1,000 < $10,000",
+            "TBUT OR DISP BICYCLES $500 < $1,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9267433289105117
+        },
+        {
+          "values": [
+            "STALKING-2ND DEGREE",
+            "STALKING-1ST DEGREE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9243421052631579
+        },
+        {
+          "values": [
+            "RECEIVE GOODS ETC BY FRAUD",
+            "RECEIVE GOODS ETC BY FRAUD $1000 < $10,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9238095238095239
+        },
+        {
+          "values": [
+            "UNLAWFUL TRANSACTION W/MINOR 1ST DEG/ILL CONT SUB U/18 YOA",
+            "UNLAWFUL TRANSACTION W/MINOR 1ST DEG/ILL CONT SUB U/16 YOA",
+            "UNLAWFUL TRANSACTION W/MINOR - 2ND DEGREE",
+            "UNLAWFUL TRANSACTION W/MINOR 1ST DEG/ILL CONT SUB PHYS INJ"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9237718155127744
+        },
+        {
+          "values": [
+            "THEFT BY FAIL TO MAKE REQ DISP PROP CLASS A 3+ IN 5 YRS",
+            "THEFT BY FAIL TO MAKE REQ DISP OF PROPERTY $1,000 < $10,000",
+            "THEFT BY FAIL TO MAKE REQ DISP OF PROPERTY $10,000 OR MORE",
+            "THEFT BY FAIL TO MAKE REQ DISP OF PROPERTY $500 < $1,000",
+            "THEFT BY FAIL TO MAKE REQ DISP OF PROPERTY"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9233443823251257
+        },
+        {
+          "values": [
+            "THEFT BY DECEPTION INCLUDING COLD CHECKS $1,000 < $10,000",
+            "THEFT BY DECEPTION INCLUDING COLD CHECKS $500 < $1,000",
+            "THEFT BY DECEPTION INCLUDING COLD CHECKS",
+            "THEFT BY DECEPTION INCLUDE COLD CHECKS CLASS A 3+ IN 5 YRS",
+            "THEFT BY DECEPTION INCLUDING COLD CHECKS $10,000 OR MORE",
+            "THEFT BY DECEPTION INCLUDING COLD CHECKS $10,000 OR MORE EMB"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9230622982916795
+        },
+        {
+          "values": [
+            "TBUT OR DISP FROM BUILDING $1,000 < $10,000",
+            "TBUT OR DISP FROM BUILD $10,000 < $1,000,000 (EMBEZZLEMENT)",
+            "TBUT OR DISP FROM BUILDING $10,000,000 OR MORE",
+            "TBUT OR DISP FROM BUILDING $500 < $1,000",
+            "TBUT OR DISP FROM BUILDING",
+            "TBUT OR DISP FROM BUILDING $10,000 < $1,000,000",
+            "TBUT OR DISP FROM BUILDING $1,000,000 < $10,000,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9216778121458626
+        },
+        {
+          "values": [
+            "VIOLATION OF IPO",
+            "VIOLATION OF FOREIGN IPO"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9208333333333333
+        },
+        {
+          "values": [
+            "THEFT BY EXTORTION",
+            "THEFT BY EXTORTION $1,000 < $10,000",
+            "THEFT BY EXTORTION $500 < $1,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9201478494623657
+        },
+        {
+          "values": [
+            "RECEIVING STOLEN PROPERTY  $10,000 OR MORE",
+            "RECEIVING STOLEN PROPERTY  $500 < $1,000",
+            "RECEIVING STOLEN PROPERTY",
+            "RECEIVING STOLEN PROPERTY  $1,000 < $10,000",
+            "RECEIVING STOLEN PROPERTY (FIREARM)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9177279722861119
+        },
+        {
+          "values": [
+            "POSS CONT SUB-1ST DEGREE-2ND OFFENSE-COCAINE",
+            "POSS CONT SUB 1ST DEGREE 3RD > OFFENSE-COCAINE",
+            "POSS CONT SUB-1ST DEGREE-1ST OFFENSE-COCAINE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9165434671373166
+        },
+        {
+          "values": [
+            "TBUT OR DISP AUTO $1,000 < $10,000",
+            "TBUT OR DISP AUTO $10,000 < $1,000,000",
+            "TBUT OR DISP AUTO $500 < $1,000",
+            "TBUT OR DISP AUTO",
+            "TBUT OR DISP AUTO $10,000,000 OR MORE",
+            "TBUT OR DISP AUTO $1,000,000 < $10,000,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.916427590764353
+        },
+        {
+          "values": [
+            "DISTRIBUTION OF OBSCENE MATTER - 1 UNIT OF MATTER",
+            "DISTRIBUTION OF OBSCENE MATTER >1 UNIT OF MATTER",
+            "DISTRIBUTION OBSCENE MATTER TO MINORS - 1ST OFFENSE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9125252678553316
+        },
+        {
+          "values": [
+            "DIST OF MATTER PORTRAYING SEX PERF BY MINOR UNDER 12 1ST OFF",
+            "DIST OF MATTER PORTRAY SEX PERF BY MINOR O/12 U/18 1ST OFF",
+            "DIST OF MATTER PORTRAYING SEXUAL PERFORMANCE BY MINOR 1ST OF"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9106378434166023
+        },
+        {
+          "values": [
+            "DIST OF SEXUALLY EXPLICIT IMAGES W/OUT CONSENT 1ST OFFENSE",
+            "DIST OF SEXUALLY EXPL IIMAGES W/OUT CONSENT FOR PROFIT 1ST"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9089134677944047
+        },
+        {
+          "values": [
+            "SHOOTING INVESTIGATION - LMPD INVOLVED",
+            "SHOOTING INVESTIGATION - OTH POLICE AGENCY INVOLVED"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9084279325765394
+        },
+        {
+          "values": [
+            "THEFT OF SERVICES $1,000 TO < $10,000",
+            "THEFT OF SERVICES $500 < $1,000",
+            "THEFT OF SERVICES",
+            "THEFT OF SERVICES $10,000 OR MORE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9081451560483819
+        },
+        {
+          "values": [
+            "POSSESSION OF HANDGUN",
+            "POSSESSION OF HANDGUN BY CONVICTED FELON"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.905
+        },
+        {
+          "values": [
+            "THEFT OF PROP MISLAID OR DELIVER BY IMISTAKE",
+            "THEFT OF PROP MISLAID OR DELIVER BY IMISTAKE $1000 < $10,000",
+            "THEFT OF PROP MISLAID/DELIVER BY MISTAKE CLS A 3 + IN 5 YRS",
+            "THEFT OF PROP MISLAID OR DELIVER BY IMISTAKE $10,000 OR >",
+            "THEFT OF PROP MISLAID OR DELIVER BY IMISTAKE $500 < $1000",
+            "THEFT OF PROPERTY LOST/MISLAID/DELIVERED BY MISTAKE MISD"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8989490015551415
+        },
+        {
+          "values": [
+            "HUMAN TRAF - COMMERCIAL SEX ACTIVITY (VICTIM < 18 YOA)",
+            "HUMAN TRAF - COMM SEX ACTIVITY (VICTIM < 18 YOA) OPER  CMV"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8975989782886333
+        },
+        {
+          "values": [
+            "TBUT OR DISP SHOPLIFTING CLASS-A, 3 OR MORE IN 5 YEARS",
+            "TBUT OR DISP SHOPLIFTING $1,000 < $10,000",
+            "TBUT OR DISP SHOPLIFTING $1,000,000 < $10,000,000",
+            "TBUT OR DISP SHOPLIFTING $10,000 < $1,000,000",
+            "TBUT OR DISP SHOPLIFTING $500 < $1,000",
+            "TBUT OR DISP SHOPLIFTING"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.895801420880238
+        },
+        {
+          "values": [
+            "DEATH INVESTIGATION - LMPD INVOLVED",
+            "DEATH INVESTIGATION - OTHER POLICE AGENCY INVOLVED",
+            "DEATH INVESTIGATION",
+            "DEATH INVESTIGATION  (OVERDOSE)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8951408555602104
+        },
+        {
+          "values": [
+            "ACCIDENTAL SHOOTING",
+            "ACCIDENTAL SHOOTING (OTHER THAN HUNTING)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.895
+        },
+        {
+          "values": [
+            "POSSESSION OF MARIJUANA",
+            "POSS OF MARIJUANA"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.889002557544757
+        },
+        {
+          "values": [
+            "ASSAULT - 4TH DEGREE (DOMESTIC VIOLENCE) NO VISIBLE INJURY",
+            "ASSAULT, 4TH DEGREE DATING VIOLENCE (NO VISIBLE INJURY)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8828852418710431
+        },
+        {
+          "values": [
+            "ANY FELONY CHARGE NOT COVERED BY THESE CODES",
+            "ANY NON CRIMINAL CHARGE NOT COVERED BY THESE CODES",
+            "ANY MISDEMEANOR CHARGE NOT COVERED BY THESE CODES"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8827859480821153
+        },
+        {
+          "values": [
+            "VIOLATION OF KENTUCKY EPO/DVO",
+            "VIOLATION OF FOREIGN EPO/DVO"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8794281430713216
+        },
+        {
+          "values": [
+            "ASSAULT - 4TH DEGREE (DOMESTIC VIOLENCE) MINOR INJURY",
+            "ASSAULT, 4TH DEGREE DATING VIOLENCE (MINOR INJURY)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.87932403609516
+        },
+        {
+          "values": [
+            "FRAUDULENT USE OF A CREDIT CARD $1000 < $10,000",
+            "FRAUD USE OF CREDIT CARD AFTER RPT LOST/STOLEN $1000<$10,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8792671394799054
+        },
+        {
+          "values": [
+            "HUMAN TRAFFICKING - FORCED LABOR VICTIM U/18 YOA",
+            "HUMAN TRAFFICKING - COMMERCIAL SEX ACTIVITY"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8785529715762275
+        },
+        {
+          "values": [
+            "HARASSMENT - PHYSICAL CONTACT - NO INJURY",
+            "HARASSMENT (NO PHYSICAL CONTACT)"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8738414634146341
+        },
+        {
+          "values": [
+            "DOMESTIC ABUSE",
+            "DOMESTIC ABUSE DUTIES OF LAW ENFORCEMENT"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.87
+        },
+        {
+          "values": [
+            "RECOVERY OF STOLEN VEHICLE-OUT OF JURISDICTION",
+            "RECOVERY OF STOLEN PROPERTY"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8616747181964574
+        },
+        {
+          "values": [
+            "FRAUD USE OF CREDIT CARD AFTER RPT LOST/STOLEN >$10,000",
+            "FRAUDULENT USE OF A CREDIT CARD > $10,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8603897771035127
+        },
+        {
+          "values": [
+            "FRAUD USE OF CREDIT CARD AFTER RPT LOST/STOLEN $500 < $1000",
+            "FRAUDULENT USE OF A CREDIT CARD $500 < $1000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8570540042842647
+        },
+        {
+          "values": [
+            "LEAV SCENE OF ACCIDENT/FAIL TO RNDR AID/ASSIST W/DEATH OR SJ",
+            "LEAVING SCENE OF ACCIDENT/FAILURE TO RENDER AID OR ASSISTANC"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8537254901960785
+        },
+        {
+          "values": [
+            "FAILURE TO REGISTER TRANSFER OF MOTOR VEHICLE",
+            "FAILURE TO NOTIFY ADDRESS CHANGE TO DEPT OF TRANSPORTATION"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8472917927001412
+        },
+        {
+          "values": [
+            "FALSELY REPORTING AN INCIDENT",
+            "FALSE REPORT AN INCIDENT TO LAW ENFORCEMENT"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8406928628708901
+        },
+        {
+          "values": [
+            "TBUT PARTS FROM VEHICLE $1,000 < $10,000",
+            "TBUT/DISP CONTENTS F/VEH CLASS-A, 3 OR MORE IN 5 YEARS",
+            "TBUT PARTS FROM VEHICLE",
+            "TBUT PARTS FROM VEHICLE $1,000,000 < $10,000,000",
+            "TBUT PARTS FROM VEHICLE $10,000 < 1,000,000",
+            "TBUT PARTS FROM VEHICLE $500 < $1,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8180714995661631
+        },
+        {
+          "values": [
+            "TBUT/DISP PURSESNATCHING CLASS-A, 3 OR MORE IN 5 YEARS",
+            "TBUT OR DISP PURSESNATCHING $1,000 < $10,000",
+            "TBUT OR DISP PURSESNATCHING $500 < $1,000",
+            "TBUT OR DISP PURSESNATCHING",
+            "TBUT OR DISP PURSESNATCHING $1,000,000 < $10,000,000"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8123891739046473
+        },
+        {
+          "values": [
+            "TRAFFICKING IN SYNTHETIC DRUGS - 1ST OFFENSE",
+            "TRAF IN SYNTHETIC DRUGS 2ND OR SUBSEQUENT OFFENSE",
+            "POSSESSION  OF SYNTHETIC DRUGS 1ST OFFENSE",
+            "POSSESSION  OF SYNTHETIC DRUGS 2ND OR SUBSEQUENT OFFENSE"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7577572438296527
+        },
+        {
+          "values": [
+            "FRAUDULENT USE OF A CREDIT CARD",
+            "FRAUD USE OF CREDIT CARD AFTER RPT LOST/STOLEN < $500"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6795568501289743
+        }
+      ]
+    }
+  ],
+  "dataset_info": {
+    "name": "crime_dirty.csv",
+    "total_rows": 71506,
+    "rows_processed": 71506,
+    "sampling_ratio": 100.0,
+    "processing_timestamp": "20250128_160508"
+  },
+  "cost_metrics": {
+    "chat_input_tokens": 25832,
+    "chat_output_tokens": 3405,
+    "total_tokens": 29237,
+    "total_cost": 0.97926
+  }
+}

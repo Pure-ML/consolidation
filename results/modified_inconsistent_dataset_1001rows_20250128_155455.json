@@ -1,0 +1,72 @@
+{
+  "dataset": "modified_inconsistent_dataset.csv",
+  "total_rows": 1001,
+  "sampled_rows": null,
+  "timestamp": "2025-01-28T15:54:50.946234",
+  "column_results": [
+    {
+      "column": "brand",
+      "total_rows": 1001,
+      "unique_values": 53,
+      "sample_values": [
+        "MINI",
+        "Genesis",
+        "Audi",
+        "Che./vy",
+        "Fo.rd"
+      ],
+      "groups": [
+        {
+          "values": [
+            "Nissan",
+            "Nis./san",
+            "Nis/san"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9597222222222221
+        },
+        {
+          "values": [
+            "Toy./ota",
+            "Toyota",
+            "Toyo/ta"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9501984126984127
+        },
+        {
+          "values": [
+            "Fo.rd",
+            "Ford",
+            "F./ord"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9122222222222222
+        },
+        {
+          "values": [
+            "Chevy",
+            "VChevrolet",
+            "Chevrolet",
+            "Che./vy"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8018871252204586
+        }
+      ]
+    }
+  ],
+  "dataset_info": {
+    "name": "modified_inconsistent_dataset.csv",
+    "total_rows": 1001,
+    "rows_processed": 1001,
+    "sampling_ratio": 100.0,
+    "processing_timestamp": "20250128_155455"
+  },
+  "cost_metrics": {
+    "chat_input_tokens": 483,
+    "chat_output_tokens": 20,
+    "total_tokens": 503,
+    "total_cost": 0.01569
+  }
+}

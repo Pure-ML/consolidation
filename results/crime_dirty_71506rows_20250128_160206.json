@@ -1,0 +1,59 @@
+{
+  "dataset": "crime_dirty.csv",
+  "total_rows": 71506,
+  "sampled_rows": null,
+  "timestamp": "2025-01-28T16:02:00.827252",
+  "column_results": [
+    {
+      "column": "CRIME_TYPE",
+      "total_rows": 71506,
+      "unique_values": 23,
+      "sample_values": [
+        "DRUGS/ALCOHOL VIOLATIONS",
+        "BURGLARY",
+        "THEFT/LARCENY",
+        "OTHER",
+        "VANDALISM"
+      ],
+      "groups": [
+        {
+          "values": [
+            "VANDALISM",
+            "VANDAL"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9333333333333333
+        },
+        {
+          "values": [
+            "DISTURBING THE PEACE",
+            "DISTURBING"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9
+        },
+        {
+          "values": [
+            "THEFT/LARCENY",
+            "THEFT"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8769230769230769
+        }
+      ]
+    }
+  ],
+  "dataset_info": {
+    "name": "crime_dirty.csv",
+    "total_rows": 71506,
+    "rows_processed": 71506,
+    "sampling_ratio": 100.0,
+    "processing_timestamp": "20250128_160206"
+  },
+  "cost_metrics": {
+    "chat_input_tokens": 546,
+    "chat_output_tokens": 36,
+    "total_tokens": 582,
+    "total_cost": 0.01854
+  }
+}

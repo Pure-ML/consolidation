@@ -22,8 +22,7 @@ from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.documents import Document
-from langchain_chroma import Chroma
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
 
 # Set up logging
 logging.basicConfig(
@@ -42,15 +41,14 @@ class CostTracker:
         "gpt-4": {
             "input": 0.03,
             "output": 0.06
-        },
-        "text-embedding-3-small": {
-            "input": 0.00002,
-            "output": 0.0
         }
     }
 
     def __init__(self):
-        self.embedding_tokens = 0
+        self.reset()
+
+    def reset(self):
+        """Reset all token counters to zero."""
         self.chat_input_tokens = 0
         self.chat_output_tokens = 0
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
@@ -59,35 +57,26 @@ class CostTracker:
         """Count tokens in text using tiktoken."""
         return len(self.tokenizer.encode(text))
 
-    def add_embedding_tokens(self, text_list: List[str]):
-        for text in text_list:
-            self.embedding_tokens += self.count_tokens(str(text))
-
     def add_chat_tokens(self, input_text: str, output_text: str):
         self.chat_input_tokens += self.count_tokens(input_text)
         self.chat_output_tokens += self.count_tokens(output_text)
 
     def get_costs(self):
-        embedding_cost = (self.embedding_tokens / 1000) * self.COSTS["text-embedding-3-small"]["input"]
         chat_input_cost = (self.chat_input_tokens / 1000) * self.COSTS["gpt-4"]["input"]
         chat_output_cost = (self.chat_output_tokens / 1000) * self.COSTS["gpt-4"]["output"]
         
         return {
-            "embedding_tokens": self.embedding_tokens,
-            "embedding_cost": embedding_cost,
             "chat_input_tokens": self.chat_input_tokens,
             "chat_output_tokens": self.chat_output_tokens,
             "chat_cost": chat_input_cost + chat_output_cost,
-            "total_cost": embedding_cost + chat_input_cost + chat_output_cost
+            "total_cost": chat_input_cost + chat_output_cost
         }
 
     def log_costs(self):
         costs = self.get_costs()
         logger.info("=== OpenAI API Usage and Costs ===")
-        logger.info(f"Embedding Tokens: {costs['embedding_tokens']:,} (${costs['embedding_cost']:.4f})")
         logger.info(f"Chat Input Tokens: {costs['chat_input_tokens']:,}")
         logger.info(f"Chat Output Tokens: {costs['chat_output_tokens']:,}")
-        logger.info(f"Chat Total Cost: ${costs['chat_cost']:.4f}")
         logger.info(f"Total Cost: ${costs['total_cost']:.4f}")
         logger.info("================================")
         return costs
@@ -97,15 +86,15 @@ class ValueGroup:
     values: Set[str]
     canonical_form: str = ""
     match_explanation: str = ""
-    mean_variance: float = 0.0  # Added to store group variance
+    similarity_score: float = 0.0  # Changed from mean_variance to similarity_score
 
     def set_canonical_form(self, value: str):
         self.canonical_form = value
         logger.info(f"Set canonical form to: {value}")
 
-    def set_mean_variance(self, variance: float):
-        self.mean_variance = variance
-        logger.debug(f"Group variance: {variance:.4f}")
+    def set_similarity_score(self, score: float):
+        self.similarity_score = score
+        logger.debug(f"Group similarity score: {score:.4f}")
 
 def standardize_value(value: str) -> str:
     """Standardize a value by removing all formatting, special chars, and spaces."""
@@ -121,19 +110,16 @@ class ImprovedRAGAgent:
     def __init__(self, 
                  similarity_threshold: float = 0.8,
                  model: str = "gpt-4",
-                 embedding_model: str = "text-embedding-3-small",
                  batch_size: int = 5):  # Number of concurrent LLM calls
         self.similarity_threshold = similarity_threshold
         
         # Initialize OpenAI
         load_dotenv()
         self.llm = ChatOpenAI(model_name=model, temperature=0)
-        self.embeddings = OpenAIEmbeddings(model=embedding_model)
         
         self.cost_tracker = CostTracker()
         self.batch_size = batch_size
         self.current_graph = None
-        self.value_embeddings = {}  # Map of value to its embedding
         
     async def _compute_similarities_batch(self, values: List[str], standardized_values: List[str], 
                                         start_idx: int, end_idx: int) -> List[tuple]:
@@ -158,43 +144,6 @@ class ImprovedRAGAgent:
         
         results = await asyncio.gather(*tasks)
         return [val for batch in results for val in batch]
-
-    async def _get_embeddings_batch(self, values: List[str], batch_size: int = 100) -> List[List[float]]:
-        """Generate embeddings for values in parallel batches."""
-        all_embeddings = []
-        values_to_embed = []
-        
-        # First check which values we already have embeddings for
-        for value in values:
-            if value in self.value_embeddings:
-                all_embeddings.append(self.value_embeddings[value])
-            else:
-                values_to_embed.append(value)
-                
-        if not values_to_embed:
-            return all_embeddings
-        
-        # Process remaining values in batches
-        for i in range(0, len(values_to_embed), batch_size):
-            batch = values_to_embed[i:i + batch_size]
-            # Track token usage for embeddings
-            self.cost_tracker.add_embedding_tokens(batch)
-            
-            try:
-                batch_embeddings = await self.embeddings.aembed_documents(batch)
-                # Store embeddings for future use
-                for val, emb in zip(batch, batch_embeddings):
-                    self.value_embeddings[val] = emb
-                all_embeddings.extend(batch_embeddings)
-                
-                if i + batch_size < len(values_to_embed):
-                    await asyncio.sleep(0.1)
-            except Exception as e:
-                logger.error(f"Error generating embeddings: {e}")
-                # Return zero embeddings as fallback
-                return [[0.0] * 1536] * len(values)  # OpenAI embeddings are 1536-dimensional
-        
-        return all_embeddings
 
     async def _build_similarity_graph_parallel(self, values: List[str], standardized_values: List[str]) -> nx.Graph:
         """Build similarity graph using parallel processing."""
@@ -244,28 +193,141 @@ class ImprovedRAGAgent:
         G.add_weighted_edges_from(all_edges)
         return G
 
-    async def _calculate_group_variance(self, values: Set[str]) -> float:
-        """Calculate the variance of embeddings within a group using cached embeddings."""
+    async def _calculate_group_similarity(self, values: Set[str]) -> float:
+        """Calculate the average similarity score within a group."""
         if len(values) < 2:
-            return 0.0
+            return 1.0
             
-        # Get embeddings for all values (they should already be cached)
-        embeddings = [self.value_embeddings[val] for val in values]
-        embeddings_array = np.array(embeddings)
+        # Calculate pairwise similarities
+        values_list = sorted(values)
+        similarities = []
+        for i in range(len(values_list)):
+            for j in range(i + 1, len(values_list)):
+                similarity = jaro_winkler_similarity(values_list[i], values_list[j])
+                similarities.append(similarity)
         
-        # Calculate centroid
-        centroid = np.mean(embeddings_array, axis=0)
+        # Return average similarity
+        return sum(similarities) / len(similarities)
+
+    async def find_similar_values(self, df: pd.DataFrame, column: str) -> List[ValueGroup]:
+        """Find groups of similar values using parallel processing."""
+        # Reset cost tracker for this dataset
+        self.cost_tracker.reset()
+        logger.info(f"Processing column: {column}")
         
-        # Calculate distances from centroid
-        distances = np.linalg.norm(embeddings_array - centroid, axis=1)
+        # Get minimal column context
+        column_context = f"""Column: {column}
+Type: {df[column].dtype}
+Values: {', '.join(map(str, df[column].dropna().sample(min(3, len(df[column].dropna()))).tolist()))}"""
+        logger.info(f"Column context: {column_context}")
         
-        # Log minimal statistics
-        mean_dist = float(np.mean(distances))
-        std_dist = float(np.std(distances))
-        logger.debug(f"Group variance stats: mean={mean_dist:.4f}, std={std_dist:.4f}")
+        # 1. Get column context with LLM description
+        column_description = await self._get_column_description(df, column)
+        sample_values = df[column].dropna().sample(min(5, len(df[column].dropna()))).tolist()
+        column_context = f"""Column name: {column}
+Description: {column_description}
+Sample values: {', '.join(map(str, sample_values))}
+Total unique values: {df[column].nunique()}
+Data type: {df[column].dtype}"""
+        logger.info(f"Column context: {column_context}")
         
-        # Return variance of distances from centroid
-        return float(np.var(distances))
+        # 2. Extract unique values and limit if too many
+        unique_vals = sorted(df[column].dropna().unique())
+        MAX_UNIQUE_VALUES = 1000
+        if len(unique_vals) > MAX_UNIQUE_VALUES:
+            logger.warning(f"Column {column} has {len(unique_vals)} unique values. Processing only first {MAX_UNIQUE_VALUES}.")
+            unique_vals = unique_vals[:MAX_UNIQUE_VALUES]
+        logger.info(f"Processing {len(unique_vals)} unique values")
+        
+        # 3. Standardize values in parallel
+        standardized_vals = await self._standardize_values_parallel(unique_vals)
+        logger.info("Completed standardization")
+        
+        # 4. Form initial groups from exact standardized matches
+        std_to_original = {}
+        for i, val in enumerate(unique_vals):
+            std_val = standardized_vals[i]
+            if std_val not in std_to_original:
+                std_to_original[std_val] = set()
+            std_to_original[std_val].add(val)
+        
+        # Initial groups are those with multiple values for same standardized form
+        initial_groups = [vals for vals in std_to_original.values() if len(vals) > 1]
+        logger.info(f"Found {len(initial_groups)} initial groups from exact standardized matches")
+        
+        # 5. Build similarity graph using unique standardized values
+        unique_std_vals = list(std_to_original.keys())
+        G = await self._build_similarity_graph_parallel(unique_std_vals, unique_std_vals)
+        logger.info(f"Built similarity graph with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges")
+        
+        # Store for visualization
+        self.current_graph = G
+        self.visualize_graph()
+        
+        # 6. Find connected components and expand to include all original values
+        raw_components = [comp for comp in nx.connected_components(G) if len(comp) > 1]
+        components = []
+        for component in raw_components:
+            expanded_component = set()
+            for std_val in component:
+                expanded_component.update(std_to_original[std_val])
+            components.append(expanded_component)
+        logger.info(f"Found {len(components)} multi-node components")
+        
+        # 7. Verify components with LLM and handle subgroups
+        verified_groups = await self._verify_groups_parallel(components, column_context)
+        logger.info(f"Final verified groups: {len(verified_groups)}")
+        
+        # Add initial exact-match groups that weren't part of graph components
+        component_values = {val for comp in components for val in comp}
+        for group in initial_groups:
+            if not any(val in component_values for val in group):
+                group_obj = ValueGroup(values=group)
+                similarity = await self._calculate_group_similarity(group)
+                group_obj.set_similarity_score(similarity)
+                verified_groups.append(group_obj)
+        
+        # Sort all groups by similarity score for better presentation
+        verified_groups.sort(key=lambda x: x.similarity_score, reverse=True)
+        return verified_groups
+
+    async def _verify_groups_parallel(self, components: List[Set[str]], column_context: str) -> List[ValueGroup]:
+        """Verify groups using batched LLM verification."""
+        verified_groups = []
+        
+        # Components passed in should already be multi-node only
+        if not components:
+            return verified_groups
+            
+        # Verify all components with LLM
+        logger.info(f"Sending {len(components)} groups for LLM verification")
+        results = await self._verify_batch_with_llm(components, column_context)
+        
+        # Process each component
+        for component, is_verified in zip(components, results):
+            if is_verified:
+                group = ValueGroup(values=set(component))
+                similarity = await self._calculate_group_similarity(component)
+                group.set_similarity_score(similarity)
+                verified_groups.append(group)
+                logger.info(f"LLM verified group with {len(component)} values (similarity: {similarity:.4f})")
+            else:
+                # Try to split rejected group into valid subgroups
+                logger.info(f"Analyzing rejected group of size {len(component)} for potential subgroups")
+                subgroups = await self._analyze_and_split_group(component, column_context)
+                
+                if subgroups:
+                    logger.info(f"Found {len(subgroups)} valid subgroups from rejected group")
+                    for subgroup in subgroups:
+                        group = ValueGroup(values=subgroup)
+                        similarity = await self._calculate_group_similarity(subgroup)
+                        group.set_similarity_score(similarity)
+                        verified_groups.append(group)
+                        logger.info(f"Added subgroup with {len(subgroup)} values (similarity: {similarity:.4f})")
+        
+        # Sort groups by similarity score for better visualization
+        verified_groups.sort(key=lambda x: x.similarity_score, reverse=True)
+        return verified_groups
 
     async def _analyze_and_split_group(self, values: Set[str], column_context: str) -> List[Set[str]]:
         """Analyze a rejected group and try to split it into valid subgroups."""
@@ -279,7 +341,7 @@ Values to analyze: {sorted(values)}
 Instructions:
 1. Look for subsets of values that represent exactly the same entity according to the column's purpose
 2. Values can only be grouped if they are DEFINITELY the same exact entity written differently
-3. Each value can only appear in one subgroup
+3. If a value could belong to multiple groups, place it in the group where it fits best
 4. Not every value needs to be in a subgroup
 5. Only create subgroups if you are 100% certain the values are the same
 
@@ -305,65 +367,21 @@ Remember: Only group values if they refer to the SAME EXACT entity according to 
             # Convert lists to sets
             subgroups = [set(subgroup) for subgroup in result["subgroups"]]
             
-            # Validate subgroups
-            all_values = set()
-            for subgroup in subgroups:
-                if not subgroup.issubset(values) or subgroup & all_values:
-                    logger.warning("Invalid subgroups detected: overlapping or invalid values")
-                    return []
-                all_values.update(subgroup)
+            # Filter out groups with less than 2 values
+            valid_groups = [group for group in subgroups if len(group) > 1]
             
-            valid_subgroups = [subgroup for subgroup in subgroups if len(subgroup) > 1]
-            if valid_subgroups:
-                logger.info(f"Found {len(valid_subgroups)} valid subgroups:")
-                for i, subgroup in enumerate(valid_subgroups, 1):
-                    logger.info(f"  Subgroup {i}: {sorted(subgroup)}")
+            if valid_groups:
+                logger.info(f"Found {len(valid_groups)} valid subgroups:")
+                for i, group in enumerate(valid_groups, 1):
+                    logger.info(f"  Subgroup {i}: {sorted(group)}")
             else:
                 logger.info("No valid subgroups found")
             
-            return valid_subgroups
+            return valid_groups
             
         except json.JSONDecodeError as e:
             logger.warning(f"Failed to parse subgroups: {e}")
             return []
-
-    async def _verify_groups_parallel(self, components: List[Set[str]], column_context: str) -> List[ValueGroup]:
-        """Verify groups using batched LLM verification."""
-        verified_groups = []
-        
-        # Components passed in should already be multi-node only
-        if not components:
-            return verified_groups
-            
-        # Verify all components with LLM
-        logger.info(f"Sending {len(components)} groups for LLM verification")
-        results = await self._verify_batch_with_llm(components, column_context)
-        
-        # Process each component
-        for component, is_verified in zip(components, results):
-            if is_verified:
-                group = ValueGroup(values=set(component))
-                variance = await self._calculate_group_variance(component)
-                group.set_mean_variance(variance)
-                verified_groups.append(group)
-                logger.info(f"LLM verified group with {len(component)} values (variance: {variance:.4f})")
-            else:
-                # Try to split rejected group into valid subgroups
-                logger.info(f"Analyzing rejected group of size {len(component)} for potential subgroups")
-                subgroups = await self._analyze_and_split_group(component, column_context)
-                
-                if subgroups:
-                    logger.info(f"Found {len(subgroups)} valid subgroups from rejected group")
-                    for subgroup in subgroups:
-                        group = ValueGroup(values=subgroup)
-                        variance = await self._calculate_group_variance(subgroup)
-                        group.set_mean_variance(variance)
-                        verified_groups.append(group)
-                        logger.info(f"Added subgroup with {len(subgroup)} values (variance: {variance:.4f})")
-        
-        # Sort groups by variance for better visualization
-        verified_groups.sort(key=lambda x: x.mean_variance)
-        return verified_groups
 
     async def _get_column_description(self, df: pd.DataFrame, column: str) -> str:
         """Get a concise description of what the column represents."""
@@ -380,88 +398,6 @@ What does this column represent? One sentence only."""
         response = await self._llm_generate(prompt)
         return response.strip()
 
-    async def find_similar_values(self, df: pd.DataFrame, column: str) -> List[ValueGroup]:
-        """Find groups of similar values using parallel processing."""
-        logger.info(f"Processing column: {column}")
-        
-        # Get minimal column context
-        column_context = f"""Column: {column}
-Type: {df[column].dtype}
-Values: {', '.join(map(str, df[column].dropna().sample(min(3, len(df[column].dropna()))).tolist()))}"""
-        logger.info(f"Column context: {column_context}")
-        
-        # 1. Get column context with LLM description
-        column_description = await self._get_column_description(df, column)
-        sample_values = df[column].dropna().sample(min(5, len(df[column].dropna()))).tolist()
-        column_context = f"""Column name: {column}
-Description: {column_description}
-Sample values: {', '.join(map(str, sample_values))}
-Total unique values: {df[column].nunique()}
-Data type: {df[column].dtype}"""
-        logger.info(f"Column context: {column_context}")
-        
-        # 2. Extract unique values
-        unique_vals = sorted(df[column].dropna().unique())
-        logger.info(f"Found {len(unique_vals)} unique values")
-        
-        # 3 & 4. Parallelize embeddings and standardization
-        # Run both operations concurrently
-        embedding_task = asyncio.create_task(self._get_embeddings_batch([str(val) for val in unique_vals]))
-        standardize_task = asyncio.create_task(self._standardize_values_parallel(unique_vals))
-        
-        # Wait for both tasks to complete
-        standardized_vals = await standardize_task
-        _ = await embedding_task  # We don't need embeddings yet, but we start them early
-        logger.info("Completed standardization and embeddings")
-        
-        # 5. Form initial groups from exact standardized matches
-        std_to_original = {}
-        for i, val in enumerate(unique_vals):
-            std_val = standardized_vals[i]
-            if std_val not in std_to_original:
-                std_to_original[std_val] = set()
-            std_to_original[std_val].add(val)
-        
-        # Initial groups are those with multiple values for same standardized form
-        initial_groups = [vals for vals in std_to_original.values() if len(vals) > 1]
-        logger.info(f"Found {len(initial_groups)} initial groups from exact standardized matches")
-        
-        # 6 & 7. Build similarity graph using unique standardized values
-        unique_std_vals = list(std_to_original.keys())
-        G = await self._build_similarity_graph_parallel(unique_std_vals, unique_std_vals)
-        logger.info(f"Built similarity graph with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges")
-        
-        # Store for visualization
-        self.current_graph = G
-        self.visualize_graph()
-        
-        # 8. Find connected components and expand to include all original values
-        raw_components = [comp for comp in nx.connected_components(G) if len(comp) > 1]
-        components = []
-        for component in raw_components:
-            expanded_component = set()
-            for std_val in component:
-                expanded_component.update(std_to_original[std_val])
-            components.append(expanded_component)
-        logger.info(f"Found {len(components)} multi-node components")
-        
-        # 9, 10, 11. Verify components with LLM and handle subgroups
-        verified_groups = await self._verify_groups_parallel(components, column_context)
-        logger.info(f"Final verified groups: {len(verified_groups)}")
-        
-        # Add initial exact-match groups that weren't part of graph components
-        component_values = {val for comp in components for val in comp}
-        for group in initial_groups:
-            if not any(val in component_values for val in group):
-                group_obj = ValueGroup(values=group)
-                variance = await self._calculate_group_variance(group)
-                group_obj.set_mean_variance(variance)
-                verified_groups.append(group_obj)
-        
-        # Sort all groups by variance for better presentation
-        verified_groups.sort(key=lambda x: x.mean_variance)
-        return verified_groups
-    
     async def _verify_batch_with_llm(self, components: List[Set[str]], column_context: str) -> List[bool]:
         """Verify multiple groups in parallel batches."""
         # Constants for batching and rate limiting
@@ -626,9 +562,13 @@ load_dotenv()
 async def main():
     # Initialize the agent
     agent = ImprovedRAGAgent(
-        model="gpt-4",
-        embedding_model="text-embedding-3-small"
+        model="gpt-4"
     )
+    
+    # Track total costs across all datasets
+    total_input_tokens = 0
+    total_output_tokens = 0
+    total_cost = 0
     
     # Get input file path
     file_path = input("\nEnter CSV file path: ")
@@ -647,6 +587,12 @@ async def main():
     print(f"\nAnalyzing column: {column}")
     groups = await agent.find_similar_values(df, column)
     
+    # Get costs for this dataset
+    dataset_costs = agent.cost_tracker.get_costs()
+    total_input_tokens += dataset_costs["chat_input_tokens"]
+    total_output_tokens += dataset_costs["chat_output_tokens"]
+    total_cost += dataset_costs["total_cost"]
+    
     # Ask if user wants to save graph with custom filename
     custom_path = input("\nEnter path to save graph visualization (press Enter for default 'similarity_graph.png'): ").strip()
     if custom_path:
@@ -655,9 +601,9 @@ async def main():
     # Filter and display groups with more than 1 value
     groups = [g for g in groups if len(g.values) > 1]
     
-    print(f"\nFound {len(groups)} groups of similar values (sorted by variance):")
+    print(f"\nFound {len(groups)} groups of similar values (sorted by similarity score):")
     for i, group in enumerate(groups, 1):
-        print(f"\nGroup {i} (variance: {group.mean_variance:.4f}):")
+        print(f"\nGroup {i} (similarity: {group.similarity_score:.4f}):")
         for value in sorted(group.values):
             print(f"  • {value}")
         
@@ -693,10 +639,11 @@ async def main():
             print("Skipping group")
             continue
 
-    # Show cost summary before asking to apply changes
-    print("\nAPI Usage Summary:")
-    costs = agent.cost_tracker.log_costs()
-    print(f"Total Cost: ${costs['total_cost']:.4f}")
+    # Show total cost summary at the end
+    print("\nTotal API Usage Summary:")
+    print(f"Total Input Tokens: {total_input_tokens:,}")
+    print(f"Total Output Tokens: {total_output_tokens:,}")
+    print(f"Total Cost: ${total_cost:.4f}")
 
     # Ask user if they want to apply changes
     apply_changes = input("\nDo you want to apply these changes to the dataset? (y/n): ").lower().strip() == 'y'

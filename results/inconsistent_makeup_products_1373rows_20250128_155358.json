@@ -1,0 +1,1239 @@
+{
+  "dataset": "inconsistent_makeup_products.csv",
+  "total_rows": 1373,
+  "sampled_rows": null,
+  "timestamp": "2025-01-28T15:48:43.995615",
+  "column_results": [
+    {
+      "column": "product_name",
+      "total_rows": 1043,
+      "unique_values": 1000,
+      "sample_values": [
+        "Conceal + Perfect Longwear Concealer",
+        "Veil Translucent Setting Powder",
+        "Infallible Up to 24H iHghlighter",
+        "Good Apple Full-Coverage Transfer-Proof Serum Fndtn",
+        "Symphony Faec Obsession"
+      ],
+      "groups": [
+        {
+          "values": [
+            "ORIGINAL\u200b Mineral Veil\u200b Set + Protect Talc-Free \u200bSetting Powder \u200bMineral SPF 25 PA++\u200b",
+            "ORIGINAL\u200b Mineral Veil\u200b Set + Protect Talc-Free \u200bSetting Powder \u200bMineral SPF 25 P+A+\u200b"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9976470588235294
+        },
+        {
+          "values": [
+            "Boi-ing Cakeless Full Coverage Waterproof Liquid Concealer",
+            "Boi-ing Cakeless Full Covergae Waterproof Liquid Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.996551724137931
+        },
+        {
+          "values": [
+            "Instant Age Rewind Instant Perfector 4-In-1 Glow Makeup",
+            "Instant Age Rewind Instant Perfector 4-In-1 Glow Makuep"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9963636363636365
+        },
+        {
+          "values": [
+            "Bye Bye Pores Pressed Pore Minimizing Setting Powder",
+            "Bye Bye Pores Perssed Pore Minimizing Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9961538461538462
+        },
+        {
+          "values": [
+            "Multi-Use Blush, Bronze, and Highlight Cream Palette",
+            "Multi-Use Blush, Bronze, and Highlight Cream aPlette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9961538461538462
+        },
+        {
+          "values": [
+            "Travel-Size Shape Tape Glow Wand Liqiud Highlighter",
+            "Travel-Size Shape Tape Glow Wand Liquid Highlighter"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.996078431372549
+        },
+        {
+          "values": [
+            "COMPLEXION RESCUE Tinted Moisturizer Mineral SPF 30",
+            "COMPLEXION RESCUET inted Moisturizer Mineral SPF 30"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.996078431372549
+        },
+        {
+          "values": [
+            "Hangover 3-In-1 Replenishin gPrimer & Setting Spray",
+            "Hangover 3-In-1 Replenishing Primer & Setting Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.996078431372549
+        },
+        {
+          "values": [
+            "Even Better All-Over Primer and Color Corrector",
+            "Even Better All-Over Pirmer and Color Corrector"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9957446808510638
+        },
+        {
+          "values": [
+            "Your Most Beautiful You Anti-Aging Face Palette",
+            "Your Most Beuatiful You Anti-Aging Face Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9957446808510638
+        },
+        {
+          "values": [
+            "On-Set Essentials: Primer + Setting Spray Trio",
+            "On-Set Essentiasl: Primer + Setting Spray Trio"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9956521739130435
+        },
+        {
+          "values": [
+            "Pro Fix Stick Color Correctnig Concealers",
+            "Pro Fix Stick Color Correcting Concealers"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9951219512195122
+        },
+        {
+          "values": [
+            "All-Inclusiev Eye, Cheek & Face Palette",
+            "All-Inclusive Eye, Cheek & Face Palette",
+            "All-Inclusiv eEye, Cheek & Face Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9948717948717949
+        },
+        {
+          "values": [
+            "Sweet & Snuny Cheeks 2-Piece NUDIES Kit",
+            "Sweet & Sunny Cheeks 2-Piece NUDIES Kit"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9948717948717949
+        },
+        {
+          "values": [
+            "Highlight & Contour Pro Face Plaette",
+            "Highlight & Contour Pro Face Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9944444444444445
+        },
+        {
+          "values": [
+            "Radiant Skin Birghtening Serum Skin Tint SPF 30",
+            "Radiant Skin Brightening Serum Skin Tint SPF 30",
+            "Radiant Skin Brightening Serum Skin TintS PF 30"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9943262411347518
+        },
+        {
+          "values": [
+            "Lightweight DH Pro Creamy Concealer",
+            "Lightweight HD Pro Creamy Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9942857142857143
+        },
+        {
+          "values": [
+            "GEN NUDE BLONZER Blush + Bronzer",
+            "GEN NUDE BLONZER Blush + Bronzre"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.99375
+        },
+        {
+          "values": [
+            "Sculpt & Glow Baked Face Palette",
+            "Sculpt & Glow Baked aFce Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.99375
+        },
+        {
+          "values": [
+            "Good To Go MiniM ix Face Palette",
+            "Good To Go Mini Mix Face Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.99375
+        },
+        {
+          "values": [
+            "Chubby Sitck Sculpting Contour",
+            "Chubby Stick Sculpting Contour"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9933333333333334
+        },
+        {
+          "values": [
+            "Illuison Hyaluronic Skin Tint",
+            "Illusion Hyaluronic Skin Tint"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.993103448275862
+        },
+        {
+          "values": [
+            "CactiCali Make Up Starter Set",
+            "CactiCali Maek Up Starter Set"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.993103448275862
+        },
+        {
+          "values": [
+            "Love Struck lBusher + Bronzer",
+            "Love Struck Blusher + Bronzer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.993103448275862
+        },
+        {
+          "values": [
+            "Laguna Ulitmate Face Palette",
+            "Laguna Ultimate Face Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9928571428571429
+        },
+        {
+          "values": [
+            "MegaGlo Makeup Stick Contour",
+            "MegaGlo MakeupS tick Contour"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9928571428571429
+        },
+        {
+          "values": [
+            "4-In-1 Love Your Selfie Longwear Foundation & Cocnealer",
+            "4-In-1 Love Your Selfie Longwera Foundation & Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9927272727272728
+        },
+        {
+          "values": [
+            "HD ProC orrector Concealer",
+            "HD Pro Corrector Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9923076923076923
+        },
+        {
+          "values": [
+            "Just A Flush Cheek Palette",
+            "Just A FlushC heek Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9923076923076923
+        },
+        {
+          "values": [
+            "Halo Suclpt + Glow Face Palette With Vitamin E",
+            "Halo Sculpt + Glow Face Palette With Vitamin E",
+            "Hlao Sculpt + Glow Face Palette With Vitamin E"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9920289855072464
+        },
+        {
+          "values": [
+            "Butter Dream Team Palette",
+            "Butter Drema Team Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.992
+        },
+        {
+          "values": [
+            "Translucent Loose Setting Powder",
+            "Translucent Loose Settign Powder",
+            "Translucent Looes Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9916666666666667
+        },
+        {
+          "values": [
+            "Symphony Faec Obsession",
+            "Symphony Face Obsession"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9913043478260869
+        },
+        {
+          "values": [
+            "Mgea Cr\u00e8mes 4-in-1 Color Cream",
+            "Mega Cr\u00e8mes 4-in-1 Color Cream"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.99
+        },
+        {
+          "values": [
+            "Redness Solutions Makeup Broad Spectrum SPF 15 With Probiotic Technology Fndtn",
+            "Redness Solutions Makeup Broad Spectrum SPF 15 With Probiotic Technology Foundation"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9879518072289157
+        },
+        {
+          "values": [
+            "The POREfessional: Super Setter Long-Lasting Makeup Setting Spray Mini",
+            "The POREfessional: Super Setter Long-Lasting Makeup Setting Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9857142857142858
+        },
+        {
+          "values": [
+            "Mattifying Setting pSray",
+            "Mattifying Settign Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9833333333333333
+        },
+        {
+          "values": [
+            "Blended Fac ePowder",
+            "Blended aFce Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9789473684210527
+        },
+        {
+          "values": [
+            "WANDERful World Silky-Soft Powder Blush",
+            "WANDERful World Silky-Soft Powder Blush Mini"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9772727272727272
+        },
+        {
+          "values": [
+            "The POREfessional Lite Ultra-lightweigh tFace Primer",
+            "The POREfessional Lite Ultra-lightweight Face Priemr Mini"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9747638326585695
+        },
+        {
+          "values": [
+            "Dewy Set Hydrating Setting Spray Mini",
+            "Dewy Set Hydrating Setting Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.972972972972973
+        },
+        {
+          "values": [
+            "Prep-Set-Glo wHydrating Setting Spray",
+            "Prep-Set-Glow Hydrating Setting Spray Mini"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9707850707850708
+        },
+        {
+          "values": [
+            "Dnadelion Twinkle Soft Nude-Pink Powder Highlighter Mini",
+            "Dandelion Twinkle Soft Nude-Pink Powder Highlighter"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9673319327731092
+        },
+        {
+          "values": [
+            "CC+ Cream Natural Matte Fndtn with SPF 40",
+            "CC+ CreamN atural Matte Foundation with SPF 40"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.963626723223754
+        },
+        {
+          "values": [
+            "Cheek Kiss Cream Blush Trio",
+            "Cheek Kiss Cream Blush"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.962962962962963
+        },
+        {
+          "values": [
+            "ULTRA LE TEINT Ultrawear All-Day Comfort Flawless Finish Fndtn",
+            "ULTRA LE TEINT UltrawearA ll-Day Comfort Flawless Finish Compact Foundation"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9556559139784946
+        },
+        {
+          "values": [
+            "Hoola Matte Powder Bronzer",
+            "Hoola Matte Powdre Bronzer Mini",
+            "Hoola Matte Powder Bronzer Jumbo"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9526952562570843
+        },
+        {
+          "values": [
+            "PureC olor Envy Sculpting Blush Refill",
+            "Pure Color nEvy Sculpting Blush"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9502546689303906
+        },
+        {
+          "values": [
+            "CC+ Nude Glow Lightweight Fndtn + Glow Serum with SPF 40",
+            "CC+ Nude Glow Lightweight Foundaiton + Glow Serum with SPF 40"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9478922716627635
+        },
+        {
+          "values": [
+            "Prep + Prime Fix+ Primer and Setting Spray",
+            "Prep + Prime Fix+ Primer and Setting Spray - Matte Finish"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9473684210526316
+        },
+        {
+          "values": [
+            "Conceal + Perfect 2-in-1 Foundation + Concealer",
+            "Conceal + Perfect 2-in- 1Fndtn + Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9453900709219858
+        },
+        {
+          "values": [
+            "Dream Fresh BB Cream 8-In-1S kin Perfector",
+            "Dream Pure BB Crea m8-in-1 Skin Perfector"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9452656030319702
+        },
+        {
+          "values": [
+            "Hydrating Face Primer - Large",
+            "Hydrating Face Primer - Small"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9448275862068966
+        },
+        {
+          "values": [
+            "Poreless Face Primer - Large",
+            "Poreless Face Primer - Small"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9428571428571428
+        },
+        {
+          "values": [
+            "Always On Skin-Balancing Foundation with Hyaluronic Acid + Adaptogens",
+            "Always On Skin-Balancing Fndtn with Hyalruonic Acid + Adaptogens"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9386322463768116
+        },
+        {
+          "values": [
+            "Conceal & Define Full Coverage Fndtn",
+            "Conceal & Define Full Coverage Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9377777777777778
+        },
+        {
+          "values": [
+            "Ambient Lighting Palette - Volume lll",
+            "Ambient Lgihting Palette",
+            "Ambient Lighting Palette Volume II"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9322326002473061
+        },
+        {
+          "values": [
+            "PowderB lush",
+            "Powder Blush",
+            "Powder Blush Stick",
+            "Powder Blush Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9253703703703704
+        },
+        {
+          "values": [
+            "Take The Day Off Charcoal Cleansing Balm Makepu Remover",
+            "Take The Day Off Cleansing Blam Makeup Remover Mini",
+            "Take The Day Off Cleanisng Balm Makeup Remover"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9245826716861162
+        },
+        {
+          "values": [
+            "Mini Bronze & Glow",
+            "Mini Filmstar Bronze &G low",
+            "Mini Filmstar Bronze & Glow"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9234567901234567
+        },
+        {
+          "values": [
+            "Smooth Operator Amazonian Clay Pressed Finishing Powder",
+            "Smooth Operator Amazonian Clay Finishing Powder",
+            "Smooth Operator Amazonian Clay Tinted Pressed Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9227334673392246
+        },
+        {
+          "values": [
+            "Prime & Glow Face Illuminator Coconut Extract Blue",
+            "Prime & Glow Face Illuminator Licorice Extract Pink"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9173716370269037
+        },
+        {
+          "values": [
+            "ModCon Liquid-Gel Blush",
+            "ModCon Liquid-Gel Contour"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9172173913043479
+        },
+        {
+          "values": [
+            "All Nighter Extra Glow Dewy Setting Spray",
+            "All Nighter Hyaluronic Acid Dewy Setting Spray",
+            "All Nighter Hyaluronic Acid Dewy Settnig Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9125643140489377
+        },
+        {
+          "values": [
+            "Invisimatte Instant Setting + Blotting Powder",
+            "Invisimatte Refill Instant Setting + Blotting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9064102564102564
+        },
+        {
+          "values": [
+            "Shape Tape Glow Powder",
+            "Shape Tape Glow Bronzer",
+            "Shape Tape Glow Blush Bar"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.906161847306012
+        },
+        {
+          "values": [
+            "Studio Perfect Color Correcting Primer in Green",
+            "Studio Perfect Color Correcting Primer in Lavender",
+            "Studio Perfect Face Primer in Clear"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9055035968245959
+        },
+        {
+          "values": [
+            "Pressed Powder Bronzer",
+            "Pressed Powder Blush"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9054545454545454
+        },
+        {
+          "values": [
+            "Loose Setting Powder",
+            "Looes Baking Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9019078947368421
+        },
+        {
+          "values": [
+            "Infallible 24H Fresh Wear Foundation In A Powder",
+            "Infallible Fresh Wear 24HR Foundaiton"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.9001501501501502
+        },
+        {
+          "values": [
+            "Smashbox X BECCA Shimmering Skin Perfetcor Pressed Highlighter Mini",
+            "Smashbox X BECCA Under Eye Brightening Corrector",
+            "Smashbox X BECCA Shimmering Skin Perfector Pressed Highlighter"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8979306219828138
+        },
+        {
+          "values": [
+            "Sun Club Lumionus Bronzing Powder",
+            "Sun Club Matt Bronzing Powder Palette",
+            "Sun Club Matt Bronzing Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8957786626752143
+        },
+        {
+          "values": [
+            "Facial Spray with Aloe, Sage and Orange Blossom",
+            "Facial Spray with Aloe, Cucumber and Green Tea",
+            "Facial Spray with Aloe, Chamomile and Lavender"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8942663121761423
+        },
+        {
+          "values": [
+            "All Nighter Face Makeup Primer",
+            "All Nighter Extra Glow Makeup Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.892962962962963
+        },
+        {
+          "values": [
+            "Power Grip Prmier + 4% Niacinamide",
+            "Power Grip Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8882352941176471
+        },
+        {
+          "values": [
+            "Shape Tape Full Coverage Concealer",
+            "Shape Tape Ultra Creamy Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8854228560110913
+        },
+        {
+          "values": [
+            "Cheeky Rose Cream Blush",
+            "Cheeky Rose Liquid Blush",
+            "Cheeky Rose Liquid Sculpt"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8849590522199217
+        },
+        {
+          "values": [
+            "Halo Healthy Glow Tinted Moisturizer Broad Spectrum SPF 25",
+            "Mini Halo Healthy lGow Tinted Moisturizer Broad Spectrum SPF 25",
+            "Halo HealthyG low Tinted Moisturizer Broad Spectrum SPF 25",
+            "Mini Halo Healthy Glow Tinted Moisturizer Broad Spectrum SPF 25"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8816426442863223
+        },
+        {
+          "values": [
+            "Pretty Fresh Hyaluronic Hydrating Foundation",
+            "Pretty Fresh Hyaluronic Acid Tinted Moisturizer",
+            "Pretty Fresh Hydrating Hyaluronic Acid Primer",
+            "Pretty Fresh Hyaluronic Creamy Concealer",
+            "Pretty Fresh Hyaluronic Acid Setting Mist"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8805986186253305
+        },
+        {
+          "values": [
+            "Moisturizing Complexion Stick",
+            "Moist. ComplexionS tick"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8793921221207578
+        },
+        {
+          "values": [
+            "Futurist Skin Tint Serum Fndtn SPF 20",
+            "Futurist Skin Tint eSrum Foundation SPF 20",
+            "FuturistH ydra Resuce Moist. Fndtn SPF 45"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8784255600067207
+        },
+        {
+          "values": [
+            "True Match Radiant Seru mConcealer",
+            "True Match Super-Blendable Powder",
+            "True Match Super Blendable Blush",
+            "True Match Super-Blnedable Foundation"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8672947388942333
+        },
+        {
+          "values": [
+            "Smotoh Affair Mattifying Face Primer",
+            "Smooth Affair Facial Primer & Brightener",
+            "Smooth Affair Illuminating Glow Face Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8663046456739458
+        },
+        {
+          "values": [
+            "Heatwave Bronzing Essence",
+            "Heatwave Luminous Bronzer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8618947368421053
+        },
+        {
+          "values": [
+            "Double Take Freed Contour Stick",
+            "Double Take Bronzer",
+            "Double Take Skin Perfection Blush Duo"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8595354175400116
+        },
+        {
+          "values": [
+            "Makeup Removing Towels",
+            "Makeup Remover Cleansing Towelette Singles"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8593073593073592
+        },
+        {
+          "values": [
+            "Megaglo Makeup Stick",
+            "eMgaGlo Makeup Stick Conceal"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8586466165413533
+        },
+        {
+          "values": [
+            "All Nighter Vitamin C Hydrating Setting Spray",
+            "All Nighter Waterproof Makeup Setting Spray",
+            "All Nighter Ultra Matte Setting Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8576896750293225
+        },
+        {
+          "values": [
+            "Camo Hydrating CC Cream SPF 30",
+            "Camo CC Cream"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8558974358974358
+        },
+        {
+          "values": [
+            "Gently Off Eye nad Lip Makeup Remover",
+            "Gentel Eye Makeup Remover"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.855063063063063
+        },
+        {
+          "values": [
+            "Makeup Melt Makeup Removing Blam",
+            "Makeup Melt Oil-Free Makeup Remover Wipes"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.848605465221319
+        },
+        {
+          "values": [
+            "Mineral Veil Finishing Powder Broad Spectrum SPF 25",
+            "Mineral Veil Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8483995307524719
+        },
+        {
+          "values": [
+            "I Am Magic Glow Radiance Booster",
+            "I Am Magic Velvety Matte Fonudation",
+            "I Am Magic Loose Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8476735290189007
+        },
+        {
+          "values": [
+            "Skin Fetish: Divine Bronzer",
+            "Skinfinish Sunstruck Radiant rBonzer",
+            "Skinfinish Suntsruck Matte Bronzer",
+            "SkinLights Prismatic Bronzer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8473793803696633
+        },
+        {
+          "values": [
+            "Shape Tape Stay Spray Setting Spray",
+            "Shape Tape Steting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8442857142857143
+        },
+        {
+          "values": [
+            "100% Oil Free yEe Makeup Remover",
+            "Oil-Free Eye Makeup Remover",
+            "iOl Free Eye Makeup Remover"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8438884931940486
+        },
+        {
+          "values": [
+            "Mini PRIME TIME Original Pore-Minimizing Primer",
+            "PRIME TIME Original Pore-Minimizign Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8375548801080717
+        },
+        {
+          "values": [
+            "Lock and Last Water-Resistant Setting Spray",
+            "Lock-In Hydrating Maekup Setting Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8374296205630355
+        },
+        {
+          "values": [
+            "Illuminizing Blendrops SPF 40 Priming Drops",
+            "Bronzing Blendrops SPF 40 Priming Drops"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8367620751341681
+        },
+        {
+          "values": [
+            "Mini Laguna Bronze rPowder Talc-Free",
+            "Laguna Bronzer Powder Tacl-Free"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8354241338112306
+        },
+        {
+          "values": [
+            "Stya All Night Micro-Fine Setting Mist",
+            "Stay All Day Blue Light Micro-Setting Mist"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8348616639638311
+        },
+        {
+          "values": [
+            "Double Wear Stay-In-Place Matte Powder Foundation Makeup",
+            "Duoble Wear Stay in Place Matte Powder Foundation Refill",
+            "Double Wear Stay-in-Place Foundation"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8323124805477745
+        },
+        {
+          "values": [
+            "Tinted Moisturizer Oil Free Natural Skin Perfector Broad Spectrum SPF 20",
+            "Mini Tinted Moisturizer Oil Free Natural Skin Perfector Broad Sepctrum SPF 20"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8302068302068303
+        },
+        {
+          "values": [
+            "Bio Stick Founadtion",
+            "Bio Powder Foundation"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8261904761904763
+        },
+        {
+          "values": [
+            "HD Studio Finishing Powder Translucent Setting Powdre",
+            "HD Finishing Powder Pressed Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8259716174810515
+        },
+        {
+          "values": [
+            "Lock-It Pore-Refiinng Primer",
+            "Lock-It Finishing Powder",
+            "Lock-It Finishing Powder Refill",
+            "Lock-It Foundation",
+            "Lock-It Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8258578557702198
+        },
+        {
+          "values": [
+            "I am Magic Mini Concealer",
+            "I Am Magic Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8244210526315789
+        },
+        {
+          "values": [
+            "Studio Fix 24-Hour Smooth Wear Fluid Corretcing Concealer",
+            "StudioF inish SPF 35 Correcting Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8241477677934674
+        },
+        {
+          "values": [
+            "Prime Lba Up to 24H Pore Minimizer",
+            "rPime Lab Up to 24H Dullness Reducer",
+            "Prime Lab Up to 24H Matte Setter"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.823039941902687
+        },
+        {
+          "values": [
+            "Mini Tinted Moisturizer Natural Skin Perfector Broad Spectrum SPF 30",
+            "Tinted Moisturizer Natural Skin Perfector Broad Spectrum SPF 30"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.822051042639278
+        },
+        {
+          "values": [
+            "Vitamin Enriched Face Base Moisturizer & Primer with Vitamin C + Hyaluronic Acid",
+            "Mini Vitamin Enriched Face Base Moisturizer & Primer with Vitamin C + Hyaluronic Acid"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8178921568627451
+        },
+        {
+          "values": [
+            "Baby Got Blush",
+            "aBby Got Blush Liquid Blush"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8156966490299823
+        },
+        {
+          "values": [
+            "Travel Size The Original Photo Finish Smooth & Blur Oil-Free Primer",
+            "The Original Photo Finish Smooth & Blur Oil-Free Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8099050203527816
+        },
+        {
+          "values": [
+            "Mini Bake & Set Soft-Focus Setting Powder",
+            "Jumbo Bake & Set Soft-Focus Setting Powder",
+            "Bake & Set Soft-oFcus Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8058685863563912
+        },
+        {
+          "values": [
+            "CC+ Cream with SPF 50+",
+            "Mini CC+ Cream with SPF 50+"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8019079685746352
+        },
+        {
+          "values": [
+            "Photo Finish Primerizer+ yHdrating Primer with Hyaluronic Acid",
+            "TravelS ize Photo Finish Primerizer+ Hydrating Primer with Hyaluronic Acid"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.8007846556233652
+        },
+        {
+          "values": [
+            "Pro Filt'r Sof tMatte Longwear Liquid Fndtn",
+            "Pro Filt'r Instant Retouch Primer",
+            "Pro Filt'r Hydrating Primer",
+            "Pro Fil'tr Instant Retouch Concealer",
+            "Pro Filt'r Mattifying Primer",
+            "Pro Filt'r Soft Matte Powder Fndtn",
+            "Pro Filt'r Instatn Retouch Setting Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.798124279335501
+        },
+        {
+          "values": [
+            "Make It Last Sunscreen - Sunscreen Setting Spray SPF 30",
+            "Make It Last Original - Natural Finish Setting Spray",
+            "Make It Last Matte - Matte Finish Charcoal Setting Spray"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7929814738505069
+        },
+        {
+          "values": [
+            "Travel Size Photo Finish Resurface Primer with Glycolic Acid",
+            "Photo Finish Resurface Primer with Glycolic Acid"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7805555555555556
+        },
+        {
+          "values": [
+            "Skin Smoothie Radiant Glow Primer",
+            "Skin Quench Hydrating Face Primer",
+            "Skin Smoothie Hydro Pop Primer",
+            "Skin Fetish: Sublime Perfection Primer",
+            "Skin Somothie Power Matte Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7649349399646883
+        },
+        {
+          "values": [
+            "Photo Finish Correct Anti-Redness Priemr",
+            "Travel Size Photo Finish Corrcet Anti-Redness Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7647435897435897
+        },
+        {
+          "values": [
+            "Travel Size Photo Finish Illuminate Glow Primer",
+            "Photo Finish Illuminate Glow Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7625126646403242
+        },
+        {
+          "values": [
+            "Travel Size Pohto Finish Oil-Free Pore Minimizing Primer",
+            "Photo Finish Oil-Free Pore Minimizing Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7619047619047619
+        },
+        {
+          "values": [
+            "Fit Me Loose Finishing Powder",
+            "oSft Velvet Finishing Powder"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7572025675473952
+        },
+        {
+          "values": [
+            "Blush Crush!",
+            "Blusher Reloaded",
+            "Blush rTio",
+            "Blush withV itamin E",
+            "Blush Cloor Infusion",
+            "Blush Tap eLiquid Blush",
+            "Blushed Liquid Blushlighter",
+            "Blush",
+            "Blush Subtil Oil-Free Powder Blush",
+            "Blushed Duo",
+            "Blushe dLiquid Blushlighter",
+            "lBushed Liquid Blush"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7296849073945554
+        },
+        {
+          "values": [
+            "Bronzed Cream Bronezr",
+            "Bronze Age Bronzing Stick",
+            "Bronzed uDo",
+            "Cit yBronzer Powder",
+            "Bronzer Powedr",
+            "Bronzer Reloaded",
+            "Bronze Goddes sPowder Bronzer",
+            "Bronze Stix",
+            "Bronzer Palette"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.7289319721966172
+        },
+        {
+          "values": [
+            "Travel Size Photo Finish Control Mattifying Primer with Salicylic Acid",
+            "Photo Finish Control Mattifying Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6984962406015037
+        },
+        {
+          "values": [
+            "Afterglow Liquid Blush",
+            "Blush Beam Cream Blush",
+            "Blush Bomb Color Drops",
+            "Blush Bomb Cream Blusher"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6964752567693745
+        },
+        {
+          "values": [
+            "Skin Treat Vega nStick Concealer",
+            "Skin Twin Creamy Concealer",
+            "Skin Full Coverage Longwear Concealer",
+            "Skin Concealer Stick",
+            "Skin Color Corrector Stick",
+            "Skin Fetish: Sublime Perfection Full Coverage Concealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6863706767334385
+        },
+        {
+          "values": [
+            "I am Magci Powder Fndtn",
+            "Camo Powder Fndtn",
+            "HY-GLAM Powder Foundation"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6863586787371952
+        },
+        {
+          "values": [
+            "Double Wear Sheer Long-Wear Foundation SPF 19",
+            "Double Duty Beauty Shape Tape Pore & Prime Balm",
+            "Double Wear Stay-In-Place Flawless Longwear Cream Concealer",
+            "Double Wear Maximum Cover Camouflage Foundation For Face and Body SPF 15"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.671387920283291
+        },
+        {
+          "values": [
+            "Studio Radiance Face And Body Radiant Sheer Fndtn",
+            "Studio Radiance Serum Powered Foundation",
+            "Studio Skin 24 Hour Full Coverage Waterproof Fndtn",
+            "Studio Waterweight SPF 30 Liquid Fndtn Makeup",
+            "Studio Fix Fluid SPF15 24HR Matte Fndtn + Oil Control"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.666524974468955
+        },
+        {
+          "values": [
+            "Studio Fix rPo Set + Blur Weightless Loose Powder",
+            "Studio Fix Powder Plus Fndtn Makeup",
+            "Studio Fix Mattifine 12hr Shine Control Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6601140359525453
+        },
+        {
+          "values": [
+            "PRO Perfect Oil Control Multi-Tasking Setting Srpay",
+            "PRO Setting Brightening Loose Setting Powder",
+            "PRO Soft Focus Longwear Foundation",
+            "PRO Skin Mattifyign Primer",
+            "PRO Skin Glass Skin Primer",
+            "PRO Soft Focus Longwear Cocnealer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.657558242871477
+        },
+        {
+          "values": [
+            "Double Duty Beauty Base Tape Hydrating Primer",
+            "Double Wear Smooth & Blur Primer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6563305152979065
+        },
+        {
+          "values": [
+            "Matte Cream Contour & Highlight Sticks",
+            "Matte Contour and Sculpt Cream Bronzer"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6432748538011696
+        },
+        {
+          "values": [
+            "Skin Fetish: Sublime Perfection Fndtn",
+            "Skin Fndtn Stick"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6358858858858859
+        },
+        {
+          "values": [
+            "Pro Matte Mixing Pigment",
+            "Pro.Matte Foundation"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.627991452991453
+        },
+        {
+          "values": [
+            "Skin Fetish Divine Blush",
+            "Skin Perfecting Powder Blushing Act Matte Blush"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.6184003152088259
+        },
+        {
+          "values": [
+            "Bluhsing Blush Powder Blush",
+            "Baby Got Bronze Bronizng Stick",
+            "Blusfhul Mini Mix Face Palette",
+            "Blush & Bronze Hydro-Blur Cheek Duo"
+          ],
+          "canonical_form": "",
+          "similarity_score": 0.5516064042723828
+        }
+      ]
+    }
+  ],
+  "dataset_info": {
+    "name": "inconsistent_makeup_products.csv",
+    "total_rows": 1373,
+    "rows_processed": 1373,
+    "sampling_ratio": 100.0,
+    "processing_timestamp": "20250128_155358"
+  },
+  "cost_metrics": {
+    "chat_input_tokens": 68708,
+    "chat_output_tokens": 4650,
+    "total_tokens": 73358,
+    "total_cost": 2.3402399999999997
+  }
+}
